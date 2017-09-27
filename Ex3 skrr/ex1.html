@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+
+
+	<!-- Information-->
+	<head>
+		<title>StreamingHub</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Exercise 1 User Interfaces">
+		<meta name="keywords" content="HTML,CSS">
+		<meta name="author" content="Ismael Garrido Mansoa & Gabriel García López">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./STYLE/style.css">
+		<link href='./IMAGES' rel='stylesheet'>
+	</head>
+
+	<body>
+		<div id="main-box">
+		<header id="header-box">
+			<ul>
+				<li><a class="links" href="#" target="_blank">My Account</a></li>
+				<li><a class="links" href="#" target="_blank">Know About Us</a></li>
+				<li><a class="links" href="#" target="_blank">Films</a></li>
+				<li><a class="links" href="#" target="_blank">Series</a></li>
+				<li><img class="logo" src="./IMAGES/video.png" alt="Logo"></li>
+			</ul>
+		</header>
+      <!--End header-->
+
+	<div id="superblock">
+			<!--First box-->
+			  <h2 class="P1">Personal Information</h2>
+
+
+		<div class="col-4 col-m-6"> <!--div containing right top column -->
+			<form><b>
+				Language*<br><br>
+				<select name="language">
+					<option value="english">English</option>
+					<option value="chinese">Chinese</option>
+					<option value="french">French</option>
+					<option value="german">German</option>
+					<option value="italian">Italian</option>
+					<option value="japanese">Japanese</option>
+					<option value="portuguese">Portuguese</option>
+					<option value="spanish">Spanish</option>
+				</select>
+				<br><br>
+
+				Birthday*<br><br>
+				<input type="date" name="birthday" min="1999-09-11">
+				<br><br><br>
+			</b></form>
+
+			<!--Subdiv containing profile picture and its button (we wanted to move it a bit to the right) -->
+			<div>
+				<script>
+					function light(sw) {
+						var pic;
+							if (sw == 1) {
+								pic = "./IMAGES/acc.png"
+							}
+						document.getElementById('Profile picture').src = pic;
+					}
+				</script>
+
+			<img src="./IMAGES/profile.jpg" alt="Profile picture" width="75" height="80">
+
+			<form action="/action_page.php">
+				<input type="file" name="pic" accept="image/*">
+			</form>
+
+			<p>
+				<button type="button" onclick="light(1);alert('Profile picture saved')" >Set profile picture</button>
+			</p>
+
+			</div> <!--End profile picture div -->
+		</div> <!--End right top column div -->
+
+
+		<div class="col-4 col-m-6">
+			<form autocomplete="on">
+				First name*<br><br>
+				<input type="text" name="firstname" autofocus required>
+				<br><br>
+				Last name*<br><br>
+				<input type="text" name="lastname" required>
+				<br><br>
+				Email*<br><br>
+				<input type="email" name="email" required>
+				<br><br>
+			</form>
+		</div> <!--end form containing right top column -->
+
+		<!--Second box-->
+			<h2 class="P1">Billing Information</h2>
+
+		<div class="col-4 col-m-12"> <!--div with the payment pictures located at the bottom right side -->
+				<div>
+					<img id="pay" src="./IMAGES/pay.png" alt="payment"> <!--First picture -->
+				</div>
+		</div>  <!--End of the div with the picture -->
+
+		<div class="col-4 col-m-12"> <!--Form containing bottom left column -->
+			<form autocomplete="on">
+				Billing address*<br><br>
+				<input class="col-m-12 nofloat" type="text" name="firstname" required>
+				<br><br>
+				Telephone number <br><br>
+				<input class="col-m-12 nofloat" type="tel" name="telephone">
+				<br><br>
+				Payment method*<br><br>
+				<select class="option" name="paymentmethod" required> <!--Multiple options for the payment methods -->
+					<option value="credit card">Credit card</option>
+					<option value="paypal">Paypal</option>
+					<option value="bizum">Bizum</option>
+				</select>
+				<br><br>
+			</form>
+		</div> <!--End of the form containing horizontal column containing card data -->
+
+		<div id="clear" class="col-12 col-m-12"> <!--End of the form containing bottom left column -->
+			<form  autocomplete="on" id="horizontal-margin">
+						<div class="horizontal-5 horizontal-m-4">Credit card number*
+							<input class="form-one col-11 col-m-11" type="text" name="creditcard" maxlength="16" required>
+						</div>
+
+						<div class="horizontal-3 horizontal-m-3">Expiration date*
+							<input class="form-one col-10 col-m-9" type="text" name="expirationdate" required>
+						</div>
+
+						<div class="horizontal-3 horizontal-m-3">Security code*
+							<input class="form-one col-m-9" type="password" name="securitycode" size="3" maxlength="3" autocomplete="off" required>
+						</div>
+			</form>
+		</div> <!--End of the form containing horizontal column containing card data-->
+
+		<div id="payblock">
+			<p class="fields"> * Obligatory fields</p>
+
+		<!--Send information to another webpage-->
+			<div class="center">
+				<form action="/action_page.php">
+					<input type="submit" value="Submit" onclick="alert('Information sent')" >
+					<br><br>
+				</form>
+			</div>
+		</div>
+
+
+		</div>
+	</div>
+    <!--End main box-->
+
+		<footer class="style">  <!--Footer-->
+		  <ul>
+			<li>
+			  <p id="pStyle">&#169; StreamingHub</p></li>
+			<li><a class="background" href="#" target="_blank">
+			  <i class="fa fa-address-book" aria-hidden="true"></i>
+			</a></li>
+			<li><a class="background" href="https://www.twitter.com/" target="_blank">
+			  <div class="headerDivider"></div>
+			  <i class="fa fa-twitter" aria-hidden="true"></i>
+			</a></li>
+			<li><a class="background" href="https://www.facebook.com/" target="_blank">
+			  <div class="headerDivider"></div>
+			  <i class="fa fa-facebook-official" aria-hidden="true"></i>
+			</a></li>
+			<li><a class="background" href="https://www.instagram.com/" target="_blank">
+			  <div class="headerDivider"></div>
+			  <i class="fa fa-instagram" aria-hidden="true"></i>
+			</a></li>
+		  </ul>
+		</footer>  <!--End of the footer-->
+  </body>
+</html>
