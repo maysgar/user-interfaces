@@ -4,7 +4,7 @@
 .modal {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 10%; /* Location of the box */
+    padding-top: 25%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -21,7 +21,7 @@
     margin: auto;
     padding: 1%;
     border: 1px solid #888;
-    width: 45%;
+    width: 85%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -29,6 +29,9 @@
     animation-duration: 0.4s
 }
 
+  #check{
+    width:auto;
+  }
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0}
@@ -250,6 +253,9 @@
 		color:white;
 		font-weight: bold;
 	}
+  #check{  /*change the check in the modal box*/
+    width:5%;
+  }
 	[id*="form-"]{
 		float:right;
 		font-family:Advent Pro;
@@ -373,6 +379,18 @@
 					float:left;
 				}
 
+      /*Modal box*/
+        .modal {
+            padding-top: 10%; /* Location of the box */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            width: 45%;
+        }
+      /*End Modal box*/
+
+
 				/*Header*/
 		header{
 			position:fixed;
@@ -430,6 +448,11 @@
 			background-position:center;
 			margin:0;
 		}
+    /*New account information box*/
+    .acc-box{
+      margin-right: 33.5%;
+    }
+    /*End New account information box*/
 		#superblock{
 			margin:auto;
 			width:70%;
