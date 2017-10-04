@@ -11,40 +11,20 @@
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
-      <span class="close">&times;</span>
+      <span class="close" onclick="return closePopUp()" method="post">&times;</span>
       <h2>StreamingHub</h2>
     </div>
-    <div class="modal-body">
-				<input class="modal-input" type="text" name="username" placeholder="Username" required>
-				<input class="modal-input" type="password" name="password" placeholder="Password" required>
-				<input id="check" name="rem_acc" type="checkbox" value="1" checked="">
-				Keep me signed in
-				<a href=# target="_blank" id="forgot">Forgot your password?</a><br><br>
-				<input id="sign-in" type="submit" value="Sign in">
-
-    </div>
-		<div class="modal-footer">
-			<ul id="modal-ul">
-				<li><a class="icons-modal" href="#" target="_blank">
-					<i class="fa fa-address-book" aria-hidden="true"></i>
-				</a></li>
-				<li><a class="icons-modal" href="https://www.twitter.com/" target="_blank">
-					<i class="fa fa-twitter" aria-hidden="true"></i>
-				</a></li>
-				<li><a class="icons-modal" href="https://www.facebook.com/" target="_blank">
-					<i class="fa fa-facebook-official" aria-hidden="true"></i>
-				</a></li>
-				<li><a class="icons-modal" href="https://www.instagram.com/" target="_blank">
-					<i class="fa fa-instagram" aria-hidden="true"></i>
-				</a></li>
-			</ul>
-		</div>
+    <form class="modal-body">
+		<input class="modal-input" type="text" name="username" placeholder="Username" required>
+		<input class="modal-input" type="password" name="password" placeholder="Password" required>
+		<input id="check" name="rem_acc" type="checkbox" value="1" checked="">
+		Keep me signed in
+		<a href=# target="_blank" id="forgot">Forgot your password?</a><br><br>
+		<input id="sign-in" type="submit" value="Sign in">
+    </form>
   </div>
 
 </div>
-
-</div>
-
 
 <!--End Modal dialog box-->
 
@@ -85,12 +65,12 @@
     <!--Account information box-->
     <h2 class="P1">Account Information</h2>
     <div class="col-4 col-m-6 acc-box">
-      <form autocomplete="on">
+      <form name="myForm1" autocomplete="on" onsubmit="return obligatoryFields()" method="post">
         Username*<br><br>
         <input type="text" name="username" autofocus required>
         <br><br>
         Password*<br><br>
-        <input type="password" name="password1" required maxlength="8">
+        <input id="passwordString" type="password" name="password1" required maxlength="8">
         <br><br>
       </form>
     </div>
@@ -101,8 +81,8 @@
 
 
 		<div class="col-4 col-m-6"> <!--div containing right top column -->
-			<form><b>
-				Language*<br><br>
+			<form name="myForm2" onsubmit="return obligatoryFields()" method="post"><b>
+				Language<br><br>
 				<select name="language">
 					<option value="english">English</option>
 					<option value="chinese">Chinese</option>
@@ -122,15 +102,6 @@
 
 			<!--Subdiv containing profile picture and its button (we wanted to move it a bit to the right) -->
 			<div>
-				<script>
-					function light(sw) {
-						var pic;
-							if (sw == 1) {
-								pic = "./IMAGES/acc.png"
-							}
-						document.getElementById('Profile picture').src = pic;
-					}
-				</script>
 
 			<img src="./IMAGES/profile.jpg" alt="Profile picture" width="75" height="80">
 
@@ -147,7 +118,7 @@
 
 
 		<div class="col-4 col-m-6">
-			<form autocomplete="on">
+			<form name="myForm3" onsubmit="return obligatoryFields()" autocomplete="on" method="post">
 				First name*<br><br>
 				<input type="text" name="firstname" autofocus required>
 				<br><br>
@@ -155,7 +126,7 @@
 				<input type="text" name="lastname" required>
 				<br><br>
 				Email*<br><br>
-				<input type="email" name="email" required>
+				<input type="email" name="email" value="username@domain.ext" required>
 				<br><br>
 			</form>
 		</div> <!--end form containing right top column -->
@@ -170,9 +141,9 @@
 		</div>  <!--End of the div with the picture -->
 
 		<div class="col-4 col-m-12"> <!--Form containing bottom left column -->
-			<form autocomplete="on">
+			<form name="myForm4" autocomplete="on" onsubmit="return obligatoryFields()" method="post">
 				Billing address*<br><br>
-				<input class="col-m-12 nofloat" type="text" name="firstname" required>
+				<input class="col-m-12 nofloat" type="text" name="address" required>
 				<br><br>
 				Telephone number <br><br>
 				<input class="col-m-12 nofloat" type="tel" name="telephone">
@@ -188,7 +159,7 @@
 		</div> <!--End of the form containing horizontal column containing card data -->
 
 		<div id="clear" class="col-12 col-m-12"> <!--End of the form containing bottom left column -->
-			<form  autocomplete="on" id="horizontal-margin">
+			<form name="myForm5" autocomplete="on" id="horizontal-margin" onsubmit="return obligatoryFields()" method="post">
 						<div class="horizontal-5 horizontal-m-4">Credit card number*
 							<input class="form-one col-11 col-m-11" type="text" name="creditcard" maxlength="16" required>
 						</div>
@@ -208,8 +179,8 @@
 
 		<!--Send information to another webpage-->
 			<div class="center">
-				<form action="/action_page.php">
-					<input type="submit" value="Submit" onclick="alert('Information sent')" >
+				<form onsubmit="return obligatoryFields()" method="post">
+					<input type="submit" value="Save">
 					<br><br>
 				</form>
 			</div>
