@@ -178,14 +178,27 @@
 			<p class="fields"> * Obligatory fields</p>
 
 		<!--Send information to another webpage-->
+    <div class="center">
+      <form onsubmit="return obligatoryFields()" method="post">
+        <div>
+          <input type="submit" value="Cancel">
+        </div>
+      </form>
+    </div>
+
 			<div class="center">
 				<form onsubmit="return obligatoryFields()" method="post">
-					<input type="submit" value="Save">
-					<br><br>
+          <div>
+					  <input type="submit" value="Save">
+          </div>
 				</form>
 			</div>
 		</div>
 
+      <div id="terms">
+        <input id="terms-check" name="terms" type="checkbox" value="1" checked="">
+        <p id="terms-text">I have read and agree to terms of use, privacy policy and use of cookies</p>
+      </div>
 
 		</div>
 	</div>
