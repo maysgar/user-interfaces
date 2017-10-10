@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+    switch(document.getElementById("mySelect").value){
+    	case p:
+        	    $("#p").click(function(){
+       				$("#p2").toggle();
+    			});
+            break;
+    	case h:
+        	    $("#h").click(function(){
+       				$("#h1").toggle();
+    			});
+        	break;
+    	case b:
+        	    $("#b").click(function(){
+       				$("#b1").toggle();
+    			});
+            break;
+	}
+
+});
+</script>
+</head>
+<body>
+
+
+<select id="mySelect" class="option" name="paymentmethod" onchange="myFunction()" required> 
+				
+<option value="p" id="p">Toggle between hiding and showing the paragraphs</option>
+<option value="h" id="h">Hola</option>
+<option value="b" id="b">ADIOS</option>
+
+</select>
+
+<p id="p2">This is another small paragraph.</p>
+<h2 id="h1">HOLA</h2>
+<h1 id="b1">ADIOS</h1>
+
+</body>
+</html>
