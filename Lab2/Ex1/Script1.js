@@ -36,30 +36,14 @@ function obligatoryFields(){
 		alert("Email cannot be changed.");
 		return false;
 	}
-	
-	var y1 = document.forms["myForm1"]["username1"].value;
-	var y2 = document.forms["myForm3"]["firstname"].value;
-	var y3 = document.forms["myForm3"]["lastname"].value;
-	var y4 = document.forms["myForm3"]["email"].value;
-	var y5 = document.forms["myForm2"]["birthday"].value;
-	var y6 = document.forms["myForm4"]["address"].value;
-	var y7 = document.forms["myForm4"]["paymentmethod"].value;
 	var y8 = document.getElementById("password1").value;
 	var y9 = document.getElementById("creditcard").value;
 	var y10 = document.getElementById("expirationdate").value;
 	var y11 = document.getElementById("securitycode").value;
 	
-	//If any field above is empty
-	if(y1 == "" || y2 == "" || y3 == "" || y4 == "" || y5 == "" || y6 == "" ||
-		y7 == "" || y8 == "" || y9 == "" || y10 == "" || y11 == ""){
-		alert("Please fill up all the obligatory fields.");
-		return false;
-	}
-	
 	var pattern0 = /[A-z,0-9]/;
 	var pattern1 = /[A-z]/;
 	var pattern2 = /[0-9]/;
-	var pattern3 = /[/]/;
 	
 	//Password is wrongly introduced
 	if(y8.length < 8 || !y8.match(pattern0)){
@@ -67,13 +51,13 @@ function obligatoryFields(){
 	}
 		
 	/*Credit card number is strictly numbers*/
-	if(y9.match(pattern1)){
+	if(y9.match(pattern1) || y9.length != 16){
 		alert("Wrong credit card format.");
 		return false;
 	}
 	
 	//Date format contains letters
-	if(y10.match(pattern1) || !y10.match(pattern3)){
+	if(y10.match(pattern1)){
 		alert("Wrong expiration date format.");
 		return false;
 	}
@@ -86,8 +70,23 @@ function obligatoryFields(){
 	
 	var phone = document.getElementById("telephone").value;
 	//If for some reason you put your phone
-	if(phone.match(pattern2) || phone.length > 9 || phone.length < 9){
+	/*if(phone.match(pattern2) || phone.length > 9 || phone.length < 9){
 		alert("Wrong number format.");
+		return false;
+	}*/
+	
+	var y1 = document.forms["myForm1"]["username1"].value;
+	var y2 = document.forms["myForm3"]["firstname"].value;
+	var y3 = document.forms["myForm3"]["lastname"].value;
+	var y4 = document.forms["myForm3"]["email"].value;
+	var y5 = document.forms["myForm2"]["birthday"].value;
+	var y6 = document.forms["myForm4"]["address"].value;
+	var y7 = document.forms["myForm4"]["paymentmethod"].value;
+
+	//If any field above is empty
+	if(y1 == "" || y2 == "" || y3 == "" || y4 == "" || y5 == "" || y6 == "" ||
+		y7 == "" || y8 == "" || y9 == "" || y10 == "" || y11 == ""){
+		alert("Please fill up all the obligatory fields.");
 		return false;
 	}
 
