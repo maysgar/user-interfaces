@@ -2,6 +2,7 @@
 /*Modal dialog box for user and password*/
 
 .modal {
+	display: none;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 25%; /* Location of the box */
@@ -85,6 +86,10 @@
 	margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.psw{
+	float:right;
 }
 
 #sign-in{
@@ -225,8 +230,17 @@
 	#superblock{
 		text-align:left;
 	}
-	#clear{
+	#pay1{
 		clear:right;
+		display:none;
+	}
+	#pay2{
+		clear:right;
+		display:none;
+	}
+	#pay3{
+		clear:right;
+		display:none;
 	}
 	select{
 		font-family: Advent pro;
