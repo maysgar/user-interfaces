@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function payMethodDisplay(){
+
+var x= document.getElementById("payselect");
+var y= x.options[x.selectedIndex].value;
+
+    if(y == "credit card"){
+        $("#bank").hide();
+		$("#pay").hide();
+        $("#cred").show();
+    }
+    else if(y == "paypal"){
+    	$("#cred").hide();
+        $("#bank").hide();
+        $("#pay").show();
+    }
+    else{
+    	$("#cred").hide();
+        $("#pay").hide();
+        $("#bank").show();
+    }
+};
+</script>
+</head>
+<body>
+
+		<div > <!--Form containing bottom left column -->
+			<form >
+				Payment method*<br><br>
+				<select id="payselect" class="option" name="paymentmethod" required>
+
+					<option value="credit card">Credit card</option>
+					<option value="paypal">Paypal</option>
+					<option value="bizum">Bizum</option>
+
+				</select>
+				<br><br>
+			</form>
+		</div>
+
+<!-- Credit card option -->
+<div id="cred clear" class="col-12 col-m-12"> <!--End of the form containing bottom left column -->
+  <form name="myForm5" autocomplete="on" id="horizontal-margin" onsubmit="return obligatoryFields()" method="post">
+        <div class="horizontal-5 horizontal-m-4">Credit card number*
+          <input class="form-one col-11 col-m-11" type="text" id="creditcard" name="creditcard" maxlength="16" value="1234567891011213" required>
+        </div>
+
+        <div class="horizontal-3 horizontal-m-3">Expiration date*
+          <input class="form-one col-10 col-m-9" type="text" id="expirationdate" name="expirationdate" value="9/20" maxlength="5" required>
+        </div>
+
+        <div class="horizontal-3 horizontal-m-3">Security code*
+          <input class="form-one col-m-9" type="password" id="securitycode" name="securitycode" size="3" maxlength="3" value="665" autocomplete="off" required>
+        </div>
+  </form>
+  </div> <!--End of the form containing horizontal column containing card data-->
+
+  <!-- Paypal option -->
+  <div id="pay" style="display:none">paypal</p>
+    <a href="https://www.paypal.com/" target="_blank">Paypal</a>
+  </div>
+
+  <!-- Bank transfer option -->
+  <div id="bank clear" class="col-12 col-m-12" style="display:none">Bank transfer</p>
+    <form name="myForm5" autocomplete="on" id="horizontal-margin" onsubmit="return obligatoryFields()" method="post">
+          <div class="horizontal-5 horizontal-m-4">Holder name*
+            <input class="form-one col-11 col-m-11" type="text" id="creditcard" name="creditcard" value="John Doe" required>
+          </div>
+
+          <div class="horizontal-3 horizontal-m-3">Account number*
+            <input class="form-one col-10 col-m-9" type="text" id="expirationdate" name="expirationdate" value="0200051332" required>
+          </div>
+
+          <div class="horizontal-3 horizontal-m-3">Bank name*
+            <input class="form-one col-m-9" id="securitycode" name="securitycode" value="La Caixa" autocomplete="off" required>
+          </div>
+  </div>
+
+  </body>
+</html>
