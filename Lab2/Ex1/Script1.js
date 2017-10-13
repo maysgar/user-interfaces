@@ -7,7 +7,7 @@ function popup(){
 }
 
 //Payment method JQuery
-function pay(){	
+function pay(){
 	var x = document.getElementById("payMethod");
     var y = x.options[x.selectedIndex].value;
     if(y == "credit-card"){
@@ -44,14 +44,14 @@ function cantChange(){
 
 //Warning about obligatory fields
 function obligatoryFields(){
-	
-	var y10 = document.getElementById("terms-check").checked;	
+
+	var y10 = document.getElementById("terms-check").checked;
 	//Check box of agreements is not checked
 	if(!y10){
 		alert("Please read and check the agreements first.");
 		return false;
 	}
-	
+
 	var y1 = document.forms["myForm1"]["username1"].value;
 	var y2 = document.forms["myForm3"]["firstname"].value;
 	var y3 = document.forms["myForm3"]["lastname"].value;
@@ -65,33 +65,33 @@ function obligatoryFields(){
 		alert("Please fill up all the obligatory fields.");
 		return false;
 	}
-	
+
 	var y7 = document.getElementById("creditcard").value;
 	var y8 = document.getElementById("expirationdate").value;
 	var y9 = document.getElementById("securitycode").value;
-	
+
 	var pattern0 = /[A-z,0-9]/;
 	var pattern1 = /[A-z]/;
 	var pattern2 = /[0-9]/;
-		
+
 	/*Credit card number is strictly numbers*/
-	if(y7.match(pattern1) || y9.length != 16){
+	if(y7.match(pattern1) || y7.length != 16){
 		alert("Wrong credit card format.");
 		return false;
 	}
-	
+
 	//Date format contains letters
 	if(y8.match(pattern1)){
 		alert("Wrong expiration date format.");
 		return false;
 	}
-	
+
 	//security code has letters
-	if(y9.match(pattern1)){
+	if(y9.match(pattern1 || y9.length != 3)){
 		alert("Wrong security code format.");
 		return false;
 	}
-	
+
 	var firstnameCookie=getCookie("email");
     if (firstnameCookie != "") {
         if((document.getElementById("username1"))!= getCookie("email")){
@@ -123,20 +123,20 @@ function obligatoryFields(){
 		}
 
     }
-	
+
 	//if it is the first time we enter the web, when we click save we set all the cookies
 	else {
-		 setCookie("username1",(document.getElementById("username1")));
-		 setCookie("password1",(document.getElementById("password1")));
-		 setCookie("firstname",(document.getElementById("firstname")));
-		 setCookie("lastname",(document.getElementById("lastname")));
-		 setCookie("address",(document.getElementById("address")));
-		 setCookie("telephone",(document.getElementById("telephone")));
-		 setCookie("creditcard",(document.getElementById("creditcard")));
-		 setCookie("expirationdate",(document.getElementById("expirationdate")));
-		 setCookie("securitycode",(document.getElementById("securitycode")));
+		 setCookie("username0",(document.getElementById("username1")));
+		 setCookie("password0",(document.getElementById("password1")));
+		 setCookie("firstname0",(document.getElementById("firstname")));
+		 setCookie("lastname0",(document.getElementById("lastname")));
+		 setCookie("address0",(document.getElementById("address")));
+		 setCookie("telephone0",(document.getElementById("telephone")));
+		 setCookie("creditcard0",(document.getElementById("creditcard")));
+		 setCookie("expirationdate0",(document.getElementById("expirationdate")));
+		 setCookie("securitycode0",(document.getElementById("securitycode")));
     }
-	
+
 	alert("Data successfully saved");
 }
 
@@ -175,57 +175,52 @@ function getCookie(cname){
 function checkCookie(){
 	var user = getCookie("email");
 	var pattern0 = /[A-z,0-9]/;
-	if(user != "") alert("Welcome." + user);
+	if(user != ""){
+		alert("Welcome." + user);
+		//Set all the cookie values of the log in on fields
+		/*document.getElementById("username1").value= getCookie("username0");
+		document.getElementById("password1").value = document.getElementById("password1").value;
+		document.getElementById("firstname").value= getCookie("firstname0");
+		document.getElementById("lastname").value= getCookie("lastname0");
+		document.getElementById("address").value= getCookie("address0");
+		document.getElementById("telephone").value= getCookie("telephone0");
+		document.getElementById("creditcard").value= getCookie("creditcard0");
+		document.getElementById("expirationdate").value= getCookie("expirationdate0");
+		document.getElementById("securitycode").value= getCookie("securitycode0");
+		document.getElementById("email").value = document.getElementById("username").value;*/
+
+	}
 	else{
 		if(user != "" && user != null){
 			user = document.getElementById("username").value;
 			setCookie("email",user);
-		} 
+		}
 		//Set values of the log in on fields (password and email)
 		//Rest is set to null
 		document.getElementById("username1").value="";
 		document.getElementById("password1").value = document.getElementById("password").value;
 		document.getElementById("firstname").value="";
-		document.getElementById("lastname").value="";			
+		document.getElementById("lastname").value="";
 		document.getElementById("address").value="";
 		document.getElementById("telephone").value="";
 		document.getElementById("creditcard").value="";
 		document.getElementById("expirationdate").value="";
 		document.getElementById("securitycode").value="";
-		
+
 		document.getElementById("email").readOnly = false;
 		document.getElementById("email").value = document.getElementById("username").value;
 		document.getElementById("email").readOnly = true;
-	}	
+	}
 	//Checks if email is valid and checks if password is valid on the log in
-	if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("username").value)) || 
+	if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("username").value)) ||
 			document.getElementById("password").value == "" || !(document.getElementById("password").value).match(pattern0) ||
 			document.getElementById("password").value.length < 8){
 		alert("Wrong Email or password format. Please Try again.");    
 	}
-	
+
 	//Close modal
 	else{
 		var modal = document.getElementById('myModal');
 		modal.style.display='none';
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
