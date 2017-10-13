@@ -7,23 +7,25 @@ function popup(){
 }
 
 //Payment method JQuery
-$(document).ready(function(){		
-    $("credit-card").click(function(){
-        $("#pay1").css("display","inline");
-        $("#pay2").css("display","none");
-        $("#pay3").css("display","none");
-    });
-    $("paypal").click(function(){
-        $("#pay1").css("display","none");
-        $("#pay2").css("display","inline");
-        $("#pay3").css("display","none");
-    });
-    $("transfer").click(function(){
-        $("#pay1").css("display","none");
-        $("#pay2").css("display","none");
-        $("#pay3").css("display","inline");
-    });
-});
+function pay(){	
+	var x = document.getElementById("payMethod");
+    var y = x.options[x.selectedIndex].value;
+    if(y == "credit-card"){
+        $("#pay1").show();
+        $("#pay2").hide();
+        $("#pay3").hide();
+    }
+    else if(y == "paypal"){
+        $("#pay1").hide();
+        $("#pay2").show();
+        $("#pay3").hide();
+    }
+    else if(y == "transfer"){
+        $("#pay1").hide();
+        $("#pay2").hide();
+        $("#pay3").show();
+    }
+}
 
 //Profile Picture
 function light(sw) {
@@ -89,7 +91,52 @@ function obligatoryFields(){
 		alert("Wrong security code format.");
 		return false;
 	}
+	
+	var firstnameCookie=getCookie("email");
+    if (firstnameCookie != "") {
+        if((document.getElementById("username1"))!= getCookie("email")){
+			alert("Data successfully saved and username has been changed"); //has to be a modal dialog box
+			}
+		if((document.getElementById("password1"))!= getCookie("password1")){
+			alert("Data successfully saved and password has been changed"); //has to be a modal dialog box
+		}
+		if((document.getElementById("firstname"))!= getCookie("firstname")){
+			alert("Data successfully saved and firstname has been changed"); //has to be a modal dialog box
+		}
+		if((document.getElementById("lastname"))!= getCookie("lastname")){
+			alert("Data successfully saved and lastname has been changed"); //has to be a modal dialog box
+		}
+		if((document.getElementById("address"))!= getCookie("address")){
+			alert("Data successfully saved and address has been changed"); //has to be a modal dialog box
+		}
+		if((document.getElementById("telephone"))!= getCookie("telephone")){
+			alert("Data successfully saved and telephone has been changed"); //has to be a modal dialog box
+		}
+		if((document.getElementById("creditcard"))!= getCookie("creditcard")){
+			alert("Data successfully saved and creditcard has been changed"); //has to be a modal dialog box
+		}
+		if((document.getElementById("expirationdate"))!= getCookie("expirationdate")){
+			alert("Data successfully saved and expirationdate has been changed"); //has to be a modal dialog box
+		}
+		if((document.getElementById("securitycode"))!= getCookie("securitycode")){
+			alert("Data successfully saved and securitycode has been changed"); //has to be a modal dialog box
+		}
 
+    }
+	
+	//if it is the first time we enter the web, when we click save we set all the cookies
+	else {
+		 setCookie("username1",(document.getElementById("username1")));
+		 setCookie("password1",(document.getElementById("password1")));
+		 setCookie("firstname",(document.getElementById("firstname")));
+		 setCookie("lastname",(document.getElementById("lastname")));
+		 setCookie("address",(document.getElementById("address")));
+		 setCookie("telephone",(document.getElementById("telephone")));
+		 setCookie("creditcard",(document.getElementById("creditcard")));
+		 setCookie("expirationdate",(document.getElementById("expirationdate")));
+		 setCookie("securitycode",(document.getElementById("securitycode")));
+    }
+	
 	alert("Data successfully saved");
 }
 
