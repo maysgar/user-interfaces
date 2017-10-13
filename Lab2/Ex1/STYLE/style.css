@@ -231,16 +231,17 @@
 		text-align:left;
 	}
 	#pay1{
-		clear:right;
 		display:none;
+		clear:right;
 	}
 	#pay2{
-		clear:right;
 		display:none;
+		clear:right;
+		float:right;
 	}
 	#pay3{
-		clear:right;
 		display:none;
+		clear:right;
 	}
 	select{
 		font-family: Advent pro;
