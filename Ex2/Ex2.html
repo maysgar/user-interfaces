@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<!-- Information-->
+	<head>
+		<title>StreamingHub</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Exercise 1 User Interfaces">
+		<meta name="keywords" content="HTML,CSS">
+		<meta name="author" content="Ismael Garrido Mansoa & Gabriel García López">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+		<link href='./STYLE/style.css' rel='stylesheet'>
+		<link href='./IMAGES' rel='stylesheet'>
+		<script src="Script1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+
+    <body onload="popup()">
+
+			<!--Modal dialog box for user and password-->
+			<!-- Trigger/Open The Modal -->
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2>StreamingHub</h2>
+					</div>
+
+					<form class="modal-body">
+						<div class="container">
+						<label><b>Username</b></label>
+						<input class="modal-input" id="username" type="email" placeholder="Email" name="username" required>
+
+						<label><b>Password</b></label>
+						<input class="modal-input" type="password" id="password" placeholder="Password" name="password" required>
+
+						<input type="checkbox" checked="checked" id="check"> Keep me signed in
+						<span class="psw"><a href="#">Forgot password?</a></span>
+						<button onclick="checkCookie()" id="sign-in" type="button">Login</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--End Modal dialog box-->
+
+		<div id="main-box">
+		<header id="header-box">
+			<ul>
+				<li><a href="#"><img id="account" src="IMAGES/acc.png"	alt="acc"></a></li>
+				<li><h2 id="margin-account">George Miller</h2></li>
+				<li><a href="ex2.html"><img id="logo" src="./IMAGES/logo.png" alt="Logo"></a></li>
+				<li><h2>StreamingHub</h2></li>
+			</ul>
+		</header>
+		<!--End Header-->
+
+		<div id="block1">
+			<!--Video Displayer-->
+
+			<!--**************************************************************************-->
+			<!--The frameborder attribute is obsolete, and the solution is the css attribute
+			'steamless' but currently is not supported by the majority of the browsers
+			so we decided to leave 'frameborder' as the attribute-->
+			<!--**************************************************************************-->
+
+			<iframe src="https://www.youtube.com/embed/4B-wFx0aMlw" frameborder="0" id="video" allowfullscreen></iframe>
+			<!--End Video Displayer-->
+
+			<!--video title-->
+			<h1 class="font1">Pink Guy: The Prophecy</h1>
+			<!--End video title-->
+
+			<!--Data video and description-->
+			<div id="Data">
+				<div id="stats">
+					<div class="data1">
+						<div><img src="IMAGES/view.png" alt="view"></div>
+						<div><p class="font">1.443.802 Views</p></div>
+					</div>
+					<div class="data1">
+						<div><img src="IMAGES/like.png" alt="like"></div>
+						<div><p class="font">38.994 Likes</p></div>
+					</div>
+					<div class="data1">
+						<div><img src="IMAGES/share.png" alt="share"></div>
+						<div><p class="font">15.906 Shares</p></div>
+					</div>
+				</div>
+
+				<p id="description">Available on iTunes: <a target="_blank" href="https://itun.es/i67g4nD">https://itun.es/i67g4nD</a></p>
+			</div>
+			<!--End Data video and description-->
+
+			<!--Second box:other videos-->
+		</div>
+
+		<!--second header for the second box-->
+		<div id="adjustbottom">
+			<div class="font1">
+				<h1 id="othervideos">Other videos</h1>
+			</div>
+			<!--end second header for the second box-->
+
+					<!--video gallery-->
+			<div id="feed">
+				<div class="gallery">
+				    <iframe src="https://www.youtube.com/embed/k_0UdJhl_rc" frameborder="0"></iframe>
+				    <div>
+						<div class="desc">Pink Guy - Are You Serious (Axel Boy Remix)</div>
+						<div class="plus"><a href="ex2-1.html"><img class="wimg" src="./Images/follow.png" alt="other"></a></div>
+					</div>
+				</div>
+
+				<div class="gallery">
+					<iframe src="https://www.youtube.com/embed/Nru316NF2h0" frameborder="0"></iframe>
+				    <div>
+						<div class="desc">Pink Guy - Dumplings (Borgore Remix)</div>
+						<div class="plus"><a href="ex2-2.html"><img class="wimg" src="./Images/follow.png" alt="other"></a></div>
+					</div>
+				</div>
+
+				<div class="gallery">
+				    <iframe src="https://www.youtube.com/embed/E1iwrfgNOUU" frameborder="0"></iframe>
+				    <div>
+						<div class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>
+						<div class="plus"><a href="ex2-3.html"><img class="wimg" src="./Images/follow.png" alt="other"></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end video gallery-->
+		</div>
+		<!--End second box:other videos-->
+
+		<!--Footer-->
+		<footer id="style">  <!--Footer-->
+			<ul>
+				<li>
+					<p id="pStyle">&#169; StreamingHub</p></li>
+				<li><a class="background" href="#" target="_blank">
+					<img class="rest" src="./Images/contact.png" alt="contact-icon">
+				</a></li>
+				<li><a class="background" href="https://www.twitter.com/" target="_blank">
+					<div class="headerDivider"></div>
+					<img class="rest" src="./Images/twitter.png" alt="Twitter-icon">
+				</a></li>
+				<li><a class="background" href="https://www.facebook.com/" target="_blank">
+					<div class="headerDivider"></div>
+					<img class="rest" src="./Images/facebook.png" alt="Facebook-icon">
+				</a></li>
+				<li><a class="background" href="https://www.instagram.com/" target="_blank">
+					<div class="headerDivider"></div>
+					<img class="rest" src="./Images/instagram.png" alt="instagram-icon">
+				</a></li>
+			</ul>
+		</footer>  <!--End of the footer-->
+	</body>
+</html>
