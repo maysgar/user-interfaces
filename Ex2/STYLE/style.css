@@ -252,7 +252,7 @@
 		#Data{
 			width:35%;
 		}
-		#video{
+		#div-iframe, #iframe{
 			float:right;
 			width:450px;
 			height:270px;
@@ -317,14 +317,14 @@
 		    width:31%;
 			background:rgba(0,0,0,0.5);
 		}
+		#draggable1, #draggable2, #draggable3{ 
+			width:150px; 
+			height:150px;
+			padding:0.5em; 
+		}
 		#feed{
 			margin:auto;
 			width:90%;
-		}
-		.gallery iframe {
-			padding:0.6em;
-			height: auto;
-			width: 90%;
 		}
 		.desc {
 		    padding:8px;
@@ -354,15 +354,21 @@
 		
 		
 		#panel {
-			padding: 50px;
+			padding-bottom: 24%;
+			padding-left: 24%;
+			padding-right: 24%;
 			display: none;
 		}
 		#panel1 {
-			padding: 50px;
+			padding-bottom: 24%;
+			padding-left: 24%;
+			padding-right: 24%;
 			display: none;
 		}
 		#panel2 {
-			padding: 50px;
+			padding-bottom: 24%;
+			padding-left: 24%;
+			padding-right: 24%;
 			display: none;
 		}
 

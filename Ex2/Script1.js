@@ -7,9 +7,9 @@ function popup(){
 }
 
 /*Counter functions for likes and shares*/
-var counter_likes = 0;
-var counter_shares = 0;
-var counter_views = 0;
+var counter_likes = 886213;
+var counter_shares = 79542;
+var counter_views = 1447862;
 function add_likes() {
     return counter_likes += 1;
 }
@@ -19,18 +19,21 @@ function add_shares() {
 function add_views() {
     return counter_views += 1;
 }
-
 function counter_function(counter){
 	if(counter == likes) document.getElementById("likes").textContent = add_likes() + " Likes";
 	else if(counter == shares) document.getElementById("shares").textContent = add_shares() + " Shares";
 	else document.getElementById("views").textContent = add_views() + " Views";
 }
 
+/*Description boxes slide*/
 function slide(id){
-	if(panel) $("#panel").slideToggle("slow");
-	else if(panel1) $("#panel1").slideToggle("slow");
+	if(id == panel) $("#panel").slideToggle("slow");
+	else if(id == panel1) $("#panel1").slideToggle("slow");
 	else $("#panel2").slideToggle("slow");
 }
+
+/*Drag and Drop features*/
+
 
 /*
 
