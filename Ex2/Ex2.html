@@ -18,8 +18,22 @@
 	</head>
 
     <body onload="popup()">
+		<div id="main-box">
+		
+		<header id="header-box">
+			<ul>
+				<li><a href="#"><img id="account" src="IMAGES/acc.png"	alt="acc"></a></li>
+				<li><h2 id="margin-account">George Miller</h2></li>
+				<li><a href="ex2.html"><img id="logo" src="./IMAGES/logo.png" alt="Logo"></a></li>
+				<li><h2>StreamingHub</h2></li>
+			</ul>
+		</header>
+		<!--End Header-->
+		
+		
 
-			<!--Modal dialog box for user and password-->
+		<div id="block1">
+		<!--Modal dialog box for user and password-->
 			<!-- Trigger/Open The Modal -->
 			<!-- The Modal -->
 			<div id="myModal" class="modal">
@@ -44,19 +58,6 @@
 				</div>
 			</div>
 			<!--End Modal dialog box-->
-
-		<div id="main-box">
-		<header id="header-box">
-			<ul>
-				<li><a href="#"><img id="account" src="IMAGES/acc.png"	alt="acc"></a></li>
-				<li><h2 id="margin-account">George Miller</h2></li>
-				<li><a href="ex2.html"><img id="logo" src="./IMAGES/logo.png" alt="Logo"></a></li>
-				<li><h2>StreamingHub</h2></li>
-			</ul>
-		</header>
-		<!--End Header-->
-
-		<div id="block1">
 			<!--Video Displayer-->
 
 			<!--**************************************************************************-->
@@ -65,7 +66,7 @@
 			so we decided to leave 'frameborder' as the attribute-->
 			<!--**************************************************************************-->
 
-			<iframe src="https://www.youtube.com/embed/4B-wFx0aMlw" frameborder="0" id="video" allowfullscreen></iframe>
+			<iframe onclick="counter_function(video)" src="https://www.youtube.com/embed/4B-wFx0aMlw" frameborder="0" id="video" allowfullscreen></iframe>
 			<!--End Video Displayer-->
 
 			<!--video title-->
@@ -76,16 +77,16 @@
 			<div id="Data">
 				<div id="stats">
 					<div class="data1">
-						<div><img src="IMAGES/view.png" alt="view"></div>
-						<div><p class="font">1.443.802 Views</p></div>
+						<img src="IMAGES/view.png" alt="view">
+						<p id="views" class="font">0 Views</p>
 					</div>
 					<div class="data1">
-						<div><img src="IMAGES/like.png" alt="like"></div>
-						<div><p class="font">38.994 Likes</p></div>
+						<input class="img_logo" type="image" src="IMAGES/like.png" alt="like" onclick="counter_function(likes)">
+						<p id="likes" class="font">0 Likes</p>
 					</div>
 					<div class="data1">
-						<div><img src="IMAGES/share.png" alt="share"></div>
-						<div><p class="font">15.906 Shares</p></div>
+						<input class="img_logo" type="image" src="IMAGES/share.png" alt="share" onclick="counter_function(shares)">
+						<p id="shares" class="font">0 Shares</p>
 					</div>
 				</div>
 

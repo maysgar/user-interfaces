@@ -6,15 +6,27 @@ function popup(){
 	modal.style.display="inline";
 }
 
+/*Counter functions for likes and shares*/
+var counter_likes = 0;
+var counter_shares = 0;
+var counter_views = 0;
+function add_likes() {
+    return counter_likes += 1;
+}
+function add_shares() {
+    return counter_shares += 1;
+}
+function add_views() {
+    return counter_views += 1;
+}
 
+function counter_function(counter){
+	if(counter == likes) document.getElementById("likes").textContent = add_likes() + " Likes";
+	else if(counter == shares) document.getElementById("shares").textContent = add_shares() + " Shares";
+	else document.getElementById("views").textContent = add_views() + " Views";
+}
 
-
-
-
-
-
-
-
+/*
 
 	var firstnameCookie=getCookie("email");
     if (firstnameCookie != "") {
@@ -33,13 +45,7 @@ function popup(){
     }
 
 	alert("Data successfully saved");
-}
-
-//Cancel button resets all to blank except password and email
-function defaultValues(){
-	document.getElementById("username1").value="";
-	document.getElementById("firstname").value="";
-}
+}*/
 
 //Cookies
 function setCookie(cname, evalue){
@@ -76,10 +82,6 @@ function checkCookie(){
 			user = document.getElementById("username").value;
 			setCookie("email",user);
 		}
-		//Set values of the log in on fields (password and email)
-		//Rest is set to null
-		document.getElementById("username1").value="";
-		document.getElementById("password1").value = document.getElementById("password").value;
 	}
 	//Checks if email is valid and checks if password is valid on the log in
 	if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("username").value)) ||
