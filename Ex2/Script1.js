@@ -26,6 +26,12 @@ function counter_function(counter){
 	else document.getElementById("views").textContent = add_views() + " Views";
 }
 
+function slide(id){
+	if(panel) $("#panel").slideToggle("slow");
+	else if(panel1) $("#panel1").slideToggle("slow");
+	else $("#panel2").slideToggle("slow");
+}
+
 /*
 
 	var firstnameCookie=getCookie("email");

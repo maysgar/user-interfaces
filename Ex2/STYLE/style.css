@@ -351,6 +351,20 @@
 			margin-bottom:44%;
 		}
 		/*End Second Part Of The Body*/
+		
+		
+		#panel {
+			padding: 50px;
+			display: none;
+		}
+		#panel1 {
+			padding: 50px;
+			display: none;
+		}
+		#panel2 {
+			padding: 50px;
+			display: none;
+		}
 
 
 		/*Footer*/
