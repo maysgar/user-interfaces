@@ -245,14 +245,15 @@
 		#Data{
 			width:35%;
 		}
-		#div-iframe, #video{
+		#droppable, #video{
 			float:right;
 			width:450px;
 			height:270px;
-			margin-top:5%;
+		}
+		#image1, #image2, #image3, #image4 {
+			margin-left:4px;
 		}
 		
-
 		.font1{
 			width:35%;
 			margin-left:20px;
@@ -311,15 +312,14 @@
 		    width:31%;
 			background:rgba(0,0,0,0.5);
 		}
-		#draggable1, #draggable2, #draggable3{ 
+		#draggable1, #draggable2, #draggable3, #draggable4{ 
 			width:150px; 
 			height:150px;
 			padding:0.5em; 
 		}
 		
-		#droppable{
-			width:450px;
-			height:270px;	
+		#auxiliar4{
+			display:none;
 		}
 		
 		#feed{
@@ -353,25 +353,12 @@
 		/*End Second Part Of The Body*/
 		
 		
-		#panel {
+		#panel, #panel1, #panel2, #panel3 {
 			padding-bottom: 24%;
 			padding-left: 24%;
 			padding-right: 24%;
 			display: none;
 		}
-		#panel1 {
-			padding-bottom: 24%;
-			padding-left: 24%;
-			padding-right: 24%;
-			display: none;
-		}
-		#panel2 {
-			padding-bottom: 24%;
-			padding-left: 24%;
-			padding-right: 24%;
-			display: none;
-		}
-
 
 		/*Footer*/
 		#style{

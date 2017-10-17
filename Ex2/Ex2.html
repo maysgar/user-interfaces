@@ -35,8 +35,10 @@
 					$( this )
 					  .addClass( "ui-state-highlight" )
 					  .find( "#video" )
-					  document.getElementById("image1").src = "IMAGES/PRO.png";
+					  document.getElementById("image1").src = document.getElementById("image4").src;
  					  document.getElementById("video").src = "https://www.youtube.com/embed/k_0UdJhl_rc";
+					  document.getElementById("auxiliar1").style.display = "none";
+					  document.getElementById("auxiliar4").style.display = "inline";
 				  }
 				});
 			});
@@ -133,7 +135,7 @@
 
 					<!--video gallery-->
 			<div id="feed">
-				<div class="gallery">
+				<div class="gallery" id="auxiliar1">
 					<div id="draggable1" class="ui-widget-content">
 						<img id="image1" src="IMAGES/AUS.png" alt="AUS">
 				    </div>
@@ -144,7 +146,7 @@
 					</div>
 				</div>
 
-				<div class="gallery">
+				<div class="gallery" id="auxiliar2">
 					<div id="draggable2" class="ui-widget-content">
 						<img id="image2" src="IMAGES/DUM.png" alt="DUM">
 				    </div>
@@ -155,7 +157,7 @@
 					</div>
 				</div>
 
-				<div class="gallery">
+				<div class="gallery" id="auxiliar3">
 					<div id="draggable3" class="ui-widget-content">
 						 <img id="image3" src="IMAGES/STU.png" alt="STU">
 				    </div>
@@ -163,6 +165,16 @@
 						<div class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>
 						<div id="flip2" class="plus"><img onclick="slide(panel2)" class="wimg" src="./Images/follow.png" alt="other"></a></div>
 						<div id="panel2">DESCRIPCION</div>
+					</div>
+				</div>
+				<div class="gallery" id="auxiliar4">
+					<div id="draggable4" class="ui-widget-content">
+						<img id="image4" src="IMAGES/PRO.png" alt="PRO">
+				    </div>
+					<div>
+						<div class="desc">Pink Guy - The Prophecy</div>
+						<div id="flip3" class="plus"><img onclick="slide(panel)" class="wimg" src="./Images/follow.png" alt="other"></div>
+						<div id="panel3">DESCRIPCION</div>
 					</div>
 				</div>
 			</div>
