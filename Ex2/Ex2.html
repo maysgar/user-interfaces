@@ -34,8 +34,9 @@
 				  drop: function( event, ui ) {
 					$( this )
 					  .addClass( "ui-state-highlight" )
-					  .find( "p" )
-						.html( "Dropped!" );
+					  .find( "#video" )
+					  document.getElementById("image1").src = "/IMAGES/PRO.png";
+ 					  document.getElementById("video").src = "https://www.youtube.com/embed/k_0UdJhl_rc";
 				  }
 				});
 			});
@@ -90,8 +91,8 @@
 			'steamless' but currently is not supported by the majority of the browsers
 			so we decided to leave 'frameborder' as the attribute-->
 			<!--**************************************************************************-->
-			<div id="div-iframe">
-			<iframe id="iframe" src="https://www.youtube.com/embed/4B-wFx0aMlw" frameborder="0" id="video" allowfullscreen></iframe>
+			<div id="droppable" class="ui-widget-content">
+			<iframe src="https://www.youtube.com/embed/4B-wFx0aMlw" frameborder="0" id="video" allowfullscreen></iframe>
 			</div>
 			<!--End Video Displayer-->
 
@@ -134,7 +135,7 @@
 			<div id="feed">
 				<div class="gallery">
 					<div id="draggable1" class="ui-widget-content">
-						<img src="IMAGES/AUS.png" alt="AUS">
+						<img id="image1" src="IMAGES/AUS.png" alt="AUS">
 				    </div>
 					<div>
 						<div class="desc">Pink Guy - Are You Serious (Axel Boy Remix)</div>
@@ -145,7 +146,7 @@
 
 				<div class="gallery">
 					<div id="draggable2" class="ui-widget-content">
-						<img src="IMAGES/DUM.png" alt="DUM">
+						<img id="image2" src="IMAGES/DUM.png" alt="DUM">
 				    </div>
 					<div>
 						<div class="desc">Pink Guy - Dumplings (Borgore Remix)</div>
@@ -156,7 +157,7 @@
 
 				<div class="gallery">
 					<div id="draggable3" class="ui-widget-content">
-						 <img src="IMAGES/STU.png" alt="STU">
+						 <img id="image3" src="IMAGES/STU.png" alt="STU">
 				    </div>
 					<div>
 						<div class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>

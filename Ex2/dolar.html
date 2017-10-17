@@ -28,7 +28,7 @@
           .find( "iframe" )
 		  console.log("dropped");
 		  document.getElementById("iframe").src = "https://www.youtube.com/embed/ow6F1tOnsss";
-		  document.
+		 document.getElementById("image").src = "http://imagenpng.com/wp-content/uploads/2015/09/imagenes-png-635x508.png";
       }});
   } );
    </script>
@@ -37,12 +37,11 @@
 <body>
  
 <div id="draggable" class="ui-widget-content">
-  <img name="PRIMER" src="http://imagenpng.com/wp-content/uploads/2015/08/Imagenes-de-amor-88.jpg" alt="asdf">
+  <img id="image" name="PRIMER" src="http://imagenpng.com/wp-content/uploads/2015/08/Imagenes-de-amor-88.jpg" alt="asdf">
 </div>
  
 <div id="droppable" class="ui-widget-header">
  <iframe id="iframe" name="logo" width="560" height="315" src="https://www.youtube.com/embed/VqEbCxg2bNI" frameborder="0" allowfullscreen></iframe>
- <img src="http://imagenpng.com/wp-content/uploads/2015/09/imagenes-png-635x508.png" alt="asdf" style="display:none">
  </div>
  
  
