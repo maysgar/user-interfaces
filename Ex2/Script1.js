@@ -32,31 +32,10 @@ function slide(id){
 	else if(id == panel2)$("#panel2").slideToggle("slow");
 	else $("#panel3").slideToggle("slow");
 }
-/*
 
-	var firstnameCookie=getCookie("email");
-    if (firstnameCookie != "") {
-        if((document.getElementById("username1"))!= getCookie("email")){
-			alert("Data successfully saved and username has been changed"); //has to be a modal dialog box
-			}
-		if((document.getElementById("password1"))!= getCookie("password1")){
-			alert("Data successfully saved and password has been changed"); //has to be a modal dialog box
-		  }
-    }
 
-	//if it is the first time we enter the web, when we click save we set all the cookies
-	else {
-		 setCookie("username0",(document.getElementById("username1")));
-		 setCookie("password0",(document.getElementById("password1")));
-    }
-
-	alert("Data successfully saved");
-}*/
 
 //Cookies
-function setCookie(cname, evalue){
-	document.cookie = cname + "=" + evalue + ";" + ";path=/";
-}
 
 function getCookie(cname){
 	var name = cname + "=";
@@ -79,23 +58,20 @@ function checkCookie(){
 	if(user != ""){
 		alert("Welcome." + user);
 		//Set all the cookie values of the log in on fields
-		/*document.getElementById("username1").value= getCookie("username0");
-		document.getElementById("password1").value = document.getElementById("password1").value;*/
+		document.getElementById("margin-account").innerHTML = getCookie("username");
+		document.getElementById("account").src = getCookie("profilePic");
+		//load profile piccture and username
 
 	}
 	else{
-		if(user != "" && user != null){
-			user = document.getElementById("username").value;
-			setCookie("email",user);
+		window.location.assign("./Ex1/Ex1.html");
 		}
-	}
 	//Checks if email is valid and checks if password is valid on the log in
 	if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("username").value)) ||
 			document.getElementById("password").value == "" || !(document.getElementById("password").value).match(pattern0) ||
 			document.getElementById("password").value.length < 8){
 		alert("Wrong Email or password format. Please Try again.");    
 	}
-
 	//Close modal
 	else{
 		var modal = document.getElementById('myModal');
