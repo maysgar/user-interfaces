@@ -99,21 +99,15 @@
 			</b></form>
 
 			<!--Subdiv containing profile picture and its button (we wanted to move it a bit to the right) -->
+			
 			<div>
-
-			<img src="./IMAGES/profile.jpg" alt="Profile picture" width="75" height="80">
-
-			<form action="/action_page.php">
-				<input type="file" name="pic" accept="image/*">
-			</form>
-
-			<p>
-				<button type="button" onclick="light(1);alert('Profile picture saved')" >Set profile picture</button>
-			</p>
-
-			</div> <!--End profile picture div -->
+				<img src="./IMAGES/profile.jpg" alt="Profile picture" width="75" height="80">
+				<input type="file" id="myFile">
+				<p>
+					<button type="button" onclick="setPicture()" >Send picture</button>  <!--alert('Profile picture saved');-->
+				</p>
+			</div>
 		</div> <!--End right top column div -->
-
 
 		<div class="col-4 col-m-6">
 			<form name="myForm3" onsubmit="return obligatoryFields()" autocomplete="on" method="post">

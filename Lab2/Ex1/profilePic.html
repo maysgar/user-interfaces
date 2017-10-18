@@ -9,13 +9,8 @@
 
 <script>
 function setPicture() {
-    var x = document.getElementById("myFile");
-    if(getCookie("profilePic") == ""){
-    	
-    }
-    else{
-    	setCookie("", );
-    }
+    setCookie("profilePic", document.getElementById("myFile"));
+	alert('Profile picture saved');
 }
 </script>
 

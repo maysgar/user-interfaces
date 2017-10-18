@@ -28,12 +28,9 @@ function pay(){
 }
 
 //Profile Picture
-function light(sw) {
-	var pic;
-		if (sw == 1) {
-			pic = "./IMAGES/acc.png"
-		}
-	document.getElementById('Profile picture').src = pic;
+function setPicture() {
+    setCookie("profilePic", document.getElementById("myFile"));
+	alert('Profile picture saved');
 }
 
 //Email cannot be changed
