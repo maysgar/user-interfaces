@@ -27,10 +27,10 @@ function pay(){
     }
 }
 
-//Profile Picture
+//Save Profile Picture as a cookie
 function setPicture() {
     setCookie("profilePic", document.getElementById("myFile"));
-	alert('Profile picture saved');
+		alert('Profile picture saved');
 }
 
 //Email cannot be changed
@@ -55,10 +55,11 @@ function obligatoryFields(){
 	var y4 = document.forms["myForm2"]["birthday"].value;
 	var y5= document.forms["myForm4"]["address"].value;
 	var y6 = document.forms["myForm4"]["paymentmethod"].value;
+	//var y11= document.getElementById("myFile");
 
 	//If any field above is empty
 	if(y1 == "" || y2 == "" || y3 == "" || y4 == "" || y5 == "" || y6 == "" ||
-		y7 == "" || y8 == "" || y9 == ""){
+		y7 == "" || y8 == "" || y9 == ""){ // || y11 == ""
 		alert("Please fill up all the obligatory fields.");
 		return false;
 	}
