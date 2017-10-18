@@ -13,8 +13,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
 		<link href='./STYLE/style.css' rel='stylesheet'>
 		<link href='./IMAGES' rel='stylesheet'>
-		<script src="Script1.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="Script1.js"></script>
 		<!--Scripts imported for the drag and drop operations-->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" href="/resources/demos/style.css">
@@ -35,22 +35,44 @@
 				$( this )
 				  .addClass( "ui-state-highlight" )
 				  .find( "#video" )
+				  caramelo("image1","image4","https://www.youtube.com/embed/k_0UdJhl_rc","description0","description3","panel", "panel3");
+				  /*function(inImage,outImage,src,description1,description2,panel1,panel2){
+					  document.getElementById(inImage).src = document.getElementById(outImage).src;
+					  document.getElementById("video").src = src;
+					  document.getElementById(description1).innerHTML = document.getElementById(description2).innerHTML;
+					  document.getElementBy/*.Id(panel1).innerHTML = document.getElementById(panel2).innerHTML;
+				  }*/
+				  /*
+				  var auxImage= document.getElementById("image4").src;
+				  var auxDes= document.getElementById("description3").innerHTML;
+				  var auxPanel= document.getElementById("panel3").innerHTML;
+				  var auxLink= document.getElementById("video").src;
+				  var link= "https://www.youtube.com/embed/k_0UdJhl_rc";
 				  
-				  document.getElementById("video").src = "https://www.youtube.com/embed/k_0UdJhl_rc";/*AUS*/
-				  document.getElementById("auxiliar1").style.display = "none";
-				  document.getElementById("auxiliar4").style.display = "inline";
+				  document.getElementById("image4").src= document.getElementById("image1").src;
+				  document.getElementById("description3").innerHTML= document.getElementById("description0").innerHTML;
+				  document.getElementById("panel3").innerHTML= document.getElementById("panel").innerHTML;
+				  document.getElementById("video").src= link;
 				  
-				  document.getElementById("video").src = "https://www.youtube.com/embed/Nru316NF2h0";/*DUM*/
-				  document.getElementById("auxiliar2").style.display = "none";
-				  document.getElementById("auxiliar1").style.display = "inline";
-				  
+				  document.getElementById("image1").src= auxImage;
+				  document.getElementById("description0").innerHTML= auxDes;
+				  document.getElementById("panel").innerHTML= auxPanel;
+				  link= auxLink;
+				  */
+				   /*src="https://www.youtube.com/embed/4B-wFx0aMlw"*/ /*PRO*/
 				   /*src="https://www.youtube.com/embed/E1iwrfgNOUU"*/ /*STU*/
 				   /*src="https://www.youtube.com/embed/Nru316NF2h0"*/ /*DUM*/
-				   /*src="https://www.youtube.com/embed/4B-wFx0aMlw"*/ /*PRO*/
+				   /*src="https://www.youtube.com/embed/k_0UdJhl_rc"*/ /*AUS*/
 				   
 			  }
 			});
-		});	
+		});
+		function caramelo(inImage,outImage,src,description1,description2,panel1,panel2){
+					  document.getElementById(inImage).src = document.getElementById(outImage).src;
+					  document.getElementById("video").src = src;
+					  document.getElementById(description1).innerHTML = document.getElementById(description2).innerHTML;
+					  document.getElementById(panel1).innerHTML = document.getElementById(panel2).innerHTML;
+				  }
 		</script>
 	</head>
 
@@ -149,7 +171,7 @@
 						<img id="image1" src="IMAGES/AUS.png" alt="AUS">
 				    </div>
 					<div>
-						<div class="desc">Pink Guy - Are You Serious (Axel Boy Remix)</div>
+						<div id="description0" class="desc">Pink Guy - Are You Serious (Axel Boy Remix)</div>
 						<div id="flip" class="plus"><img onclick="slide(panel)" class="wimg" src="./Images/follow.png" alt="other"></div>
 						<div id="panel">DESCRIPCION</div>
 					</div>
@@ -160,7 +182,7 @@
 						<img id="image2" src="IMAGES/DUM.png" alt="DUM">
 				    </div>
 					<div>
-						<div class="desc">Pink Guy - Dumplings (Borgore Remix)</div>
+						<div id="description1" class="desc">Pink Guy - Dumplings (Borgore Remix)</div>
 						<div id="flip1" class="plus"><img onclick="slide(panel1)" class="wimg" src="./Images/follow.png" alt="other"></a></div>
 						<div id="panel1">DESCRIPCION</div>
 					</div>
@@ -171,7 +193,7 @@
 						 <img id="image3" src="IMAGES/STU.png" alt="STU">
 				    </div>
 					<div>
-						<div class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>
+						<div id="description2" class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>
 						<div id="flip2" class="plus"><img onclick="slide(panel2)" class="wimg" src="./Images/follow.png" alt="other"></a></div>
 						<div id="panel2">DESCRIPCION</div>
 					</div>
@@ -181,7 +203,7 @@
 						<img id="image4" src="IMAGES/PRO.png" alt="PRO">
 				    </div>
 					<div>
-						<div class="desc">Pink Guy - The Prophecy</div>
+						<div id="description3" class="desc">Pink Guy - The Prophecy</div>
 						<div id="flip3" class="plus"><img onclick="slide(panel3)" class="wimg" src="./Images/follow.png" alt="other"></div>
 						<div id="panel3">DESCRIPCION</div>
 					</div>
