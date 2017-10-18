@@ -1,0 +1,383 @@
+
+/*Modal dialog box for user and password*/
+
+.modal {
+	display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 15%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #f2f2f2;
+    margin: auto;
+    padding: 1%;
+    border: 1px solid #888;
+    width: 55%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+  #check{
+    width:auto;
+  }
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color:	#4169E1;
+    color: white;
+		font-family:Advent Pro;
+}
+
+.modal-body {
+	margin-top: 2%;
+	padding: 2px 16px;
+	font-family: Advent Pro;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color:	#4169E1;
+    color: white;
+		font-family:Advent Pro;
+}
+
+.modal-input{
+	color:black;
+	width: 92%;
+	padding: 12px 20px;
+	margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.psw{
+	float:right;
+}
+
+#sign-in{
+	width: 100%;
+	background-color: #1E90FF;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family:Advent Pro;
+	font-size: 18px;
+}
+
+#sign-in:hover{
+  background-color: #4169E1;
+}
+
+#forgot{
+	float:right;
+	margin-right: 3%;
+}
+
+.icons-modal{
+	float:right;
+	background-color: #4169E1;
+	margin-right: 10%;
+}
+
+#modal-ul{
+	background-color: #4169E1;
+}
+
+#terms{
+	float:right;
+	width:48%;
+	padding-top: 4%;
+	padding-top: 1%;
+}
+#terms-check{
+	width:auto;
+	margin-top: 6%;
+}
+#terms-text{
+	font-family: Advent Pro;
+	color: white;
+	font-weight: bold;
+	width: 92%;
+	float: right;
+}
+/*End Modal dialog box*/
+		/*Header style*/
+		#logo{
+			width:50px;
+			height:50px;
+		}
+		#margin-account{
+			float:right;
+		}
+		#account{
+			float:right;
+			width:50px;
+			height:50px;
+		}
+		.img_logo{
+			width:40px;
+			height:40px;
+			float:left;
+		}
+
+		.headerDivider {
+			 border-left:1px solid white;
+			 border-right:1px solid white;
+			 height:30px;
+			 top:10px;
+			 float:right;
+			 margin-top: 18px;
+		}
+		header{
+			position:fixed;
+		    top:0;
+		    left:0;
+			right:0;
+		    z-index:9999;
+		    width:100%;
+		    height:50px;
+		}
+		ul{
+			list-style-type:none;
+			background:rgba(0,0,0,0.5);
+			margin: 0;
+			padding: 0;
+			overflow:hidden;
+		}
+		li a img{
+			float: left;
+			width: 50px;
+			height:50px;
+			padding:11px;
+		}
+		li h2{
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 2px;
+			text-decoration: none;
+			font-family:Advent Pro;
+			float:left;
+			font-weight: bold;
+		}
+		li a.background{
+			display:block;
+			float:right;
+			color:white;
+			text-align:center;
+			padding:5px;
+			text-decoration:none;
+			font-family:Advent Pro;
+		}
+		li a:hover{
+			background-color:#565656;
+		}
+		li a.background:hover{
+			background-color:#76323F;
+		}
+		/*End Header style*/
+
+
+		body{
+			background-image: url(../images/back.jpg);
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-position:center;
+			background-attachment:fixed;
+			margin:0;
+		}
+		#main-box{
+			margin:auto;
+			width:70%;
+			margin-top:12%;
+		}
+		#header-box{
+			margin:auto;
+			width:90%;
+		}
+		#block1{
+			margin-top:8%;
+		}
+
+
+		/*Fisrt Part Of The Body*/
+		#Data{
+			width:35%;
+		}
+		#droppable, #video{
+			float:right;
+			width:450px;
+			height:270px;
+		}
+		#image1, #image2, #image3, #image4 {
+			margin-left:4px;
+		}
+		
+		.font1{
+			width:35%;
+			margin-left:20px;
+			font-family:Advent Pro;
+			font-weight: bold;
+			color:white;
+		}
+		.font{
+			color:white;
+		}
+		#othervideos{
+			clear:right;
+			font-weight: bold;
+			color:white;
+		}
+
+		/*views, Likes and Shares*/
+		#stats{
+			margin-left:20px;
+			list-style-type:none;
+			overflow:auto;
+		}
+		.data1{
+			width:38%;
+		}
+		#stats div img{
+			width:40px;
+			height:40px;
+			float:left;
+		}
+		#stats div p{
+			margin-left:12px;
+			font-family:Advent Pro;
+			float:left;
+			font-weight: bold;
+			width:7%;
+		}
+		/*views, Likes and Shares*/
+
+		#description{
+			margin-left:40px;
+			width:300px;
+			height:100px;
+			font-weight: bold;
+			font-family:Helvetica;
+			padding: 8px;
+			color:white;
+		}
+		/*End Fisrt Part Of The Body*/
+
+
+		/*Second Part Of The Body*/
+		.gallery {
+		    margin: 5px;
+		    float: left;
+		    width:31%;
+			background:rgba(0,0,0,0.5);
+		}
+		#draggable1, #draggable2, #draggable3, #draggable4{ 
+			width:150px; 
+			height:150px;
+			padding:0.5em; 
+		}
+		
+		#auxiliar4{
+			display:none;
+		}
+		
+		#feed{
+			margin:auto;
+			width:90%;
+		}
+		.desc {
+		    padding:8px;
+		    text-align:center;
+			font-family:Advent Pro;
+			font-weight: bold;
+			float:left;
+			width:60%;
+		}
+		.gallery a{
+			text-decoration:none;
+			color:black;
+		}
+		.plus img{
+			float:right;
+			width:30px;
+			height:30px;
+			padding:8px;
+		}
+		.wimg{
+			width:20%;
+		}
+		#adjustbottom{
+			margin-bottom:44%;
+		}
+		/*End Second Part Of The Body*/
+		
+		
+		#panel, #panel1, #panel2, #panel3 {
+			padding-bottom: 24%;
+			padding-left: 24%;
+			padding-right: 24%;
+			display: none;
+		}
+
+		/*Footer*/
+		#style{
+			width:100%;
+			clear:both;
+			margin:auto;
+			width:70%;
+		}
+		.rest{
+			width:42px;
+			height:42px;
+			border:0;
+		}
+		#pStyle{
+			color:white;
+			margin-left:5px;
+			float:left;
+			padding:0.7em;
+			font-family:Advent Pro;
+		}
+		/*Footer*/
+
