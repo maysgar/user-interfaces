@@ -29,10 +29,11 @@ function counter_function(counter){
 function slide(id){
 	if(id == panel) $("#panel").slideToggle("slow");
 	else if(id == panel1) $("#panel1").slideToggle("slow");
-	else $("#panel2").slideToggle("slow");
+	else if(id == panel2)$("#panel2").slideToggle("slow");
+	else $("#panel3").slideToggle("slow");
 }
 
-/*Drag and Drop features*/
+/*Drag and Drop*/
 
 
 /*

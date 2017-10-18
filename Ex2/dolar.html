@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Droppable - Revert draggable position</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #draggable, #draggable2 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #droppable { width="560"; height="315"; padding: 0.5em; float: left; margin: 10px; }
+  img {width:100px;height:100px}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable({ revert: "valid" });
+ 
+    $( "#droppable" ).droppable({
+      classes: {
+        "ui-droppable-active": "ui-state-active",
+        "ui-droppable-hover": "ui-state-hover"
+      },
+      drop: function( event, ui ) {
+		$( this )
+          .addClass( "ui-state-highlight" )
+          .find( "iframe" )
+		  console.log("dropped");
+		  document.getElementById("iframe").src = "https://www.youtube.com/embed/ow6F1tOnsss";
+		 document.getElementById("image").src = "http://imagenpng.com/wp-content/uploads/2015/09/imagenes-png-635x508.png";
+      }});
+  } );
+   </script>
+   
+</head>
+<body>
+ 
+<div id="draggable" class="ui-widget-content">
+  <img id="image" name="PRIMER" src="http://imagenpng.com/wp-content/uploads/2015/08/Imagenes-de-amor-88.jpg" alt="asdf">
+</div>
+ 
+<div id="droppable" class="ui-widget-header">
+ <iframe id="iframe" name="logo" width="560" height="315" src="https://www.youtube.com/embed/VqEbCxg2bNI" frameborder="0" allowfullscreen></iframe>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>

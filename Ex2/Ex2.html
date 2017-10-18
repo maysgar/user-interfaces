@@ -21,27 +21,36 @@
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script>
-			$(function() {
-				$("#draggable1").draggable({ revert: "valid" });
-				$("#draggable2").draggable({ revert: "valid" });
-				$("#draggable3").draggable({ revert: "valid" });
+		$(function() {
+			$("#draggable1").draggable({ revert: "valid" });
+			$("#draggable2").draggable({ revert: "valid" });
+			$("#draggable3").draggable({ revert: "valid" });
+		});
+		$(function() {
+			$( "#draggable" ).draggable();
+			$("#draggable2").draggable();
+			$("#draggable3").draggable();
+			$( "#droppable" ).droppable({
+			  drop: function( event, ui ) {
+				$( this )
+				  .addClass( "ui-state-highlight" )
+				  .find( "#video" )
+				  
+				  document.getElementById("video").src = "https://www.youtube.com/embed/k_0UdJhl_rc";/*AUS*/
+				  document.getElementById("auxiliar1").style.display = "none";
+				  document.getElementById("auxiliar4").style.display = "inline";
+				  
+				  document.getElementById("video").src = "https://www.youtube.com/embed/Nru316NF2h0";/*DUM*/
+				  document.getElementById("auxiliar2").style.display = "none";
+				  document.getElementById("auxiliar1").style.display = "inline";
+				  
+				   /*src="https://www.youtube.com/embed/E1iwrfgNOUU"*/ /*STU*/
+				   /*src="https://www.youtube.com/embed/Nru316NF2h0"*/ /*DUM*/
+				   /*src="https://www.youtube.com/embed/4B-wFx0aMlw"*/ /*PRO*/
+				   
+			  }
 			});
-			$( function() {
-				$( "#draggable" ).draggable();
-				$("#draggable2").draggable();
-				$("#draggable3").draggable();
-				$( "#droppable" ).droppable({
-				  drop: function( event, ui ) {
-					$( this )
-					  .addClass( "ui-state-highlight" )
-					  .find( "#video" )
-					  document.getElementById("image1").src = document.getElementById("image4").src;
- 					  document.getElementById("video").src = "https://www.youtube.com/embed/k_0UdJhl_rc";
-					  document.getElementById("auxiliar1").style.display = "none";
-					  document.getElementById("auxiliar4").style.display = "inline";
-				  }
-				});
-			});
+		});	
 		</script>
 	</head>
 
@@ -173,7 +182,7 @@
 				    </div>
 					<div>
 						<div class="desc">Pink Guy - The Prophecy</div>
-						<div id="flip3" class="plus"><img onclick="slide(panel)" class="wimg" src="./Images/follow.png" alt="other"></div>
+						<div id="flip3" class="plus"><img onclick="slide(panel3)" class="wimg" src="./Images/follow.png" alt="other"></div>
 						<div id="panel3">DESCRIPCION</div>
 					</div>
 				</div>
