@@ -21,6 +21,9 @@
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script>
+		$('#image1').mousedown(function () {
+			console.log($(this).attr("src"));
+		});
 		$(function() {
 			$("#draggable1").draggable({ revert: "valid" });
 			$("#draggable2").draggable({ revert: "valid" });
@@ -35,13 +38,39 @@
 				$( this )
 				  .addClass( "ui-state-highlight" )
 				  .find( "#video" )
-				  caramelo("image1","image4","https://www.youtube.com/embed/k_0UdJhl_rc","description0","description3","panel", "panel3");
-				  /*function(inImage,outImage,src,description1,description2,panel1,panel2){
-					  document.getElementById(inImage).src = document.getElementById(outImage).src;
-					  document.getElementById("video").src = src;
-					  document.getElementById(description1).innerHTML = document.getElementById(description2).innerHTML;
-					  document.getElementBy/*.Id(panel1).innerHTML = document.getElementById(panel2).innerHTML;
-				  }*/
+				  
+				  /*var src;
+					var link;*/
+				  //if(/*video in iframe is equeal to A = youtube link && src = imagen*/)
+				  
+				  /*If video on iframe is PRO (base case)*/
+				  switch(document.getElementById("video").src){
+						/*PRO video in the iframe*/
+						case "https://www.youtube.com/embed/4B-wFx0aMlw":
+							swap("image1","image4","https://www.youtube.com/embed/k_0UdJhl_rc","description0","description3","panel", "panel3","description0");
+							swap("image2","image4","https://www.youtube.com/embed/Nru316NF2h0","description1","description3","panel1", "panel3","description1");
+							swap("image3","image4","https://www.youtube.com/embed/E1iwrfgNOUU","description2","description3","panel2", "panel3","description2");
+							break;
+						/*AUS video in the iframe*/
+						case "https://www.youtube.com/embed/k_0UdJhl_rc":
+							swap("image2","image1","https://www.youtube.com/embed/Nru316NF2h0","description1","description0","panel1", "panel","description1");
+							swap("image3","image1","https://www.youtube.com/embed/E1iwrfgNOUU","description2","description3","panel2", "panel","description2");
+							swap("image4","image1","https://www.youtube.com/embed/4B-wFx0aMlw","description3","description3","panel3", "panel","description3");
+							break;
+						/*DUM video in the iframe*/
+						case "https://www.youtube.com/embed/Nru316NF2h0":
+							swap("image1","image2","https://www.youtube.com/embed/k_0UdJhl_rc","description0","description1","panel", "panel1","description0");
+							swap("image3","image2","https://www.youtube.com/embed/E1iwrfgNOUU","description2","description3","panel2", "panel2","description2");
+							swap("image4","image2","https://www.youtube.com/embed/4B-wFx0aMlw","description3","description3","panel3", "panel1","description3");
+							break;
+						/*STU video in the iframe*/
+						case "https://www.youtube.com/embed/E1iwrfgNOUU":
+							swap("image1","image3","https://www.youtube.com/embed/k_0UdJhl_rc","description0","description2","panel", "panel2","description0");
+							swap("image2","image3","https://www.youtube.com/embed/Nru316NF2h0","description1","description2","panel1", "panel2","description1");
+							swap("image4","image3","https://www.youtube.com/embed/4B-wFx0aMlw","description3","description3","panel3", "panel2","description3");
+							break;
+					  }
+				 			 
 				  /*
 				  var auxImage= document.getElementById("image4").src;
 				  var auxDes= document.getElementById("description3").innerHTML;
@@ -59,20 +88,20 @@
 				  document.getElementById("panel").innerHTML= auxPanel;
 				  link= auxLink;
 				  */
-				   /*src="https://www.youtube.com/embed/4B-wFx0aMlw"*/ /*PRO*/
-				   /*src="https://www.youtube.com/embed/E1iwrfgNOUU"*/ /*STU*/
-				   /*src="https://www.youtube.com/embed/Nru316NF2h0"*/ /*DUM*/
-				   /*src="https://www.youtube.com/embed/k_0UdJhl_rc"*/ /*AUS*/
-				   
 			  }
 			});
 		});
-		function caramelo(inImage,outImage,src,description1,description2,panel1,panel2){
-					  document.getElementById(inImage).src = document.getElementById(outImage).src;
-					  document.getElementById("video").src = src;
-					  document.getElementById(description1).innerHTML = document.getElementById(description2).innerHTML;
-					  document.getElementById(panel1).innerHTML = document.getElementById(panel2).innerHTML;
-				  }
+		function swap(inImage,outImage,src,description1,description2,panel1,panel2,title){
+			//set image that is dragged as the video image of the iframe
+			document.getElementById(inImage).src = document.getElementById(outImage).src;
+			//set the src video of the iframe to the one vinculated to the draggable image
+			document.getElementById("video").src = src;
+			//Change descriptions and video title into the new one
+			document.getElementById(description1).innerHTML = document.getElementById(description2).innerHTML;
+			document.getElementById(panel1).innerHTML = document.getElementById(panel2).innerHTML;
+			//Change title of main video
+			document.getElementById(title).innerHTML = document.getElementById(description2).innerHTML;
+		}
 		</script>
 	</head>
 
@@ -130,7 +159,7 @@
 			<!--End Video Displayer-->
 
 			<!--video title-->
-			<h1 class="font1">Pink Guy: The Prophecy</h1>
+			<h1 id="title" class="font1">Pink Guy: The Prophecy</h1>
 			<!--End video title-->
 
 			<!--Data video and description-->

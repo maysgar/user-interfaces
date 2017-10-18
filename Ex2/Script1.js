@@ -32,10 +32,6 @@ function slide(id){
 	else if(id == panel2)$("#panel2").slideToggle("slow");
 	else $("#panel3").slideToggle("slow");
 }
-
-/*Drag and Drop*/
-
-
 /*
 
 	var firstnameCookie=getCookie("email");
