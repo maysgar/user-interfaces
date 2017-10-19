@@ -48,51 +48,51 @@
 							/*If video in iframe is PRO and image dragged is image1 then swap them*/
 							if(document.getElementById("image1").src == imageAUS) {
 								console.log(document.getElementById("video").src);
-								swap("image1","image4","https://www.youtube.com/embed/k_0UdJhl_rc","description0","description3","panel", "panel3","description0");
+								swap("image1","image4",AUS,"description0","description3","panel", "panel3","description0");
 								console.log(document.getElementById("video").src);
 								}
 							/*If video in iframe is PRO and image dragged is image2 then swap them*/
 							else if(document.getElementById("image2").src == imageDUM)
-								swap("image2","image4","https://www.youtube.com/embed/Nru316NF2h0","description1","description3","panel1", "panel3","description1");
+								swap("image2","image4",DUM,"description1","description3","panel1", "panel3","description1");
 								
 							/*If video in iframe is PRO and image dragged is image3 then swap them*/
-							else swap("image3","image4","https://www.youtube.com/embed/E1iwrfgNOUU","description2","description3","panel2", "panel3","description2");						
+							else swap("image3","image4",STU,"description2","description3","panel2", "panel3","description2");						
 						
 						case AUS:
 							/*If video in iframe is AUS and image dragged is image2 then swap them*/
 							if(document.getElementById("image2").src == imageDUM) 
-								swap("image2","image1","https://www.youtube.com/embed/Nru316NF2h0","description1","description0","panel1", "panel","description1");
+								swap("image2","image1",DUM,"description1","description0","panel1", "panel","description1");
 							
 							/*If video in iframe is AUS and image dragged is image3 then swap them*/
 							else if(document.getElementById("image3").src == imageSTU)
-								swap("image3","image1","https://www.youtube.com/embed/E1iwrfgNOUU","description2","description3","panel2", "panel","description2");
+								swap("image3","image1",STU,"description2","description3","panel2", "panel","description2");
 							
 							/*If video in iframe is AUS and image dragged is image4 then swap them*/
-							else swap("image4","image1","https://www.youtube.com/embed/4B-wFx0aMlw","description3","description3","panel3", "panel","description3");
+							else swap("image4","image1",PRO,"description3","description3","panel3", "panel","description3");
 						
 						case DUM:
 							/*If video in iframe is DUM and image dragged is image1 then swap them*/
 							if(document.getElementById("image1").src == imageAUS) 
-								swap("image1","image2","https://www.youtube.com/embed/k_0UdJhl_rc","description0","description1","panel", "panel1","description0");
+								swap("image1","image2",AUS,"description0","description1","panel", "panel1","description0");
 							
 							/*If video in iframe is DUM and image dragged is image3 then swap them*/
 							else if(document.getElementById("image3").src == imageSTU)
-							swap("image3","image2","https://www.youtube.com/embed/E1iwrfgNOUU","description2","description3","panel2", "panel2","description2");
+							swap("image3","image2",STU,"description2","description3","panel2", "panel2","description2");
 							
 							/*If video in iframe is DUM and image dragged is image4 then swap them*/
-							else swap("image4","image2","https://www.youtube.com/embed/4B-wFx0aMlw","description3","description3","panel3", "panel1","description3");
+							else swap("image4","image2",PRO,"description3","description3","panel3", "panel1","description3");
 						
 						case STU:
 							/*If video in iframe is STU and image dragged is image1 then swap them*/
 							if(document.getElementById("image1").src == imageAUS) 
-								swap("image1","image3","https://www.youtube.com/embed/k_0UdJhl_rc","description0","description2","panel", "panel2","description0");
+								swap("image1","image3",AUS,"description0","description2","panel", "panel2","description0");
 							
 							/*If video in iframe is STU and image dragged is image2 then swap them*/
 							else if(document.getElementById("image2").src == imageDUM)
-								swap("image2","image3","https://www.youtube.com/embed/Nru316NF2h0","description1","description2","panel1", "panel2","description1");
+								swap("image2","image3",DUM,"description1","description2","panel1", "panel2","description1");
 							
 							/*If video in iframe is STU and image dragged is image4 then swap them*/
-							else swap("image4","image3","https://www.youtube.com/embed/4B-wFx0aMlw","description3","description3","panel3", "panel2","description3");
+							else swap("image4","image3",PRO,"description3","description3","panel3", "panel2","description3");
 					}
 				 			 
 				  /*
