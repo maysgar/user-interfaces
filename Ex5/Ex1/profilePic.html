@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<input type="file" id="myFile">
+
+<button onclick="setPicture()">Send picture</button>
+
+<script>
+function setPicture() {
+    setCookie("profilePic", document.getElementById("myFile"));
+	alert('Profile picture saved');
+}
+</script>
+
+</body>
+</html>

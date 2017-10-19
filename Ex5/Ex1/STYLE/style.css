@@ -1,0 +1,535 @@
+
+/*Modal dialog box for user and password*/
+
+.modal {
+	display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 25%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #f2f2f2;
+    margin: auto;
+    padding: 1%;
+    border: 1px solid #888;
+    width: 85%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+  #check{
+    width:auto;
+  }
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color:	#4169E1;
+    color: white;
+		font-family:Advent Pro;
+}
+
+.modal-body {
+	margin-top: 2%;
+	padding: 2px 16px;
+	font-family: Advent Pro;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color:	#4169E1;
+    color: white;
+		font-family:Advent Pro;
+}
+
+.modal-input{
+	color:black;
+	width:100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.psw{
+	float:right;
+}
+
+#sign-in{
+	width: 100%;
+	background-color: #1E90FF;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family:Advent Pro;
+	font-size: 18px;
+}
+
+#sign-in:hover{
+  background-color: #4169E1;
+}
+
+#forgot{
+	float:right;
+	margin-right: 3%;
+}
+
+.icons-modal{
+	float:right;
+	background-color: #4169E1;
+	margin-right: 10%;
+}
+#modal-ul{
+	background-color: #4169E1;
+}
+
+/*End Modal dialog box*/
+
+
+
+
+
+/*Web responsive*/
+	/*padding and border are included in the total width and height of the elements*/
+	* {
+		box-sizing: border-box;
+	}
+
+
+	/*clears the flow*/
+	.row::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+	/*make one class for each of the 12 columns*/
+	 [class*="col-"] {
+        float: right;
+        padding: 15px;
+        font-family:Advent Pro;
+        color:white;
+        font-weight: bold;
+				width: 100%;
+				margin-left:0%;
+    }
+
+    /* For mobile phones: */
+	/*Header*/
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color:rgba(0,0,0,0.5);
+		width:100%;
+	}
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 10px;
+		text-decoration: none;
+		font-family:Advent Pro;
+		-webkit transition: all 500ms ease;
+		-o-transition:all 500ms ease;
+		transition: all 500ms ease;
+	}
+	li a.background{
+		display:block;
+		float:right;
+		color:white;
+		text-align:center;
+		text-decoration:none;
+		font-family:Advent Pro;
+	}
+	li a.links:hover{
+		background-color:#565656;
+	}
+	li a.background:hover{
+		background-color:none;
+	}
+	img.logo{
+		width:  8.5%;
+		height: auto;
+		float: left;
+		margin-left:46%;
+	}
+	/*Header*/
+
+
+	/*Images*/
+	#pay{
+		width:200px;
+		height:100px;
+
+	}
+	.image{
+		background-color:red;
+		float:left;
+		clear:both;
+		width:6%;
+	}
+	/*Images*/
+
+	.P1{
+		font-family:Advent Pro;
+		clear:right;
+		margin-left:15px;
+		font-weight: bold;
+		color:white;
+	}
+
+	body{
+		background-image: url(../Images/back.jpg);
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center;
+		margin:0;
+	}
+	#superblock{
+		text-align:left;
+	}
+	#pay1{
+		display:none;
+		clear:right;
+	}
+	#pay2{
+		display:none;
+		clear:right;
+		float:right;
+	}
+	#pay3{
+		display:none;
+		clear:right;
+	}
+	select{
+		font-family: Advent pro;
+		background: transparent;
+		border: 1px solid white;
+		font-size: 14px;
+		border-radius:6px;
+	}
+	input{
+		box-sizing:border-box;
+		background:none;
+		border:none;
+		outline:none;
+		border-bottom: 2px solid white;
+		width:80%;
+		color:white;
+	}
+	input:focus, input:active{
+		outline:none;
+		border-bottom: 3px solid white;
+	}
+	input[type="submit"] {
+		background:#76323F;
+		color:white;
+		font-weight: bold;
+    border-bottom: none;
+	}
+  #check{  /*change the check in the modal box*/
+    width:5%;
+  }
+	[id*="form-"]{
+		float:right;
+		font-family:Advent Pro;
+		color:white;
+		font-weight: bold;
+	}
+	.option{
+		color:white;
+	}
+	.option:hover{
+		color:black;
+	}
+	.stablish{
+	    float:right;
+	}
+	#payblock{
+		clear:right;
+		float:right;
+    margin-bottom: 3%;
+	}
+	.fields{
+		margin:10px;
+		font-family:Advent Pro;
+		color:white;
+		font-weight: bold;
+	}
+	.form-one{
+		width:80%;
+		float:left;
+		margin-right: 20%;
+		margin-bottom: 6%;
+	}
+	  /*Submit button*/
+	.center{
+		float: right;
+    margin-right: 20%;
+    width:30%;
+	}
+	  /*Submit button*/
+
+	/*Footer*/
+	.style{
+		width:100%;
+		clear:both;
+		margin:auto;
+	}
+	.rest{
+		width:30px;
+		height:30px;
+		border:0;
+	}
+	#pStyle{
+		color:white;
+		margin-left:5px;
+		float:left;
+		padding:0.7em;
+		font-family:Advent Pro;
+	}
+	.nofloat{
+		float: none;
+	}
+    
+	/*Footer*/
+	.fa{
+		margin-top:18px;
+	}
+	/*End footer*/
+	/*Mobile*/
+
+@media only screen and (min-width: 600px) {
+        /* For tablets: */
+        .col-m-1 {width: 8.33%;}
+        .col-m-2 {width: 16.66%;}
+        .col-m-3 {width: 25%;}
+        .col-m-4 {width: 33.33%;}
+        .col-m-5 {width: 41.66%;}
+        .col-m-6 {width: 50%;}
+        .col-m-7 {width: 58.33%;}
+        .col-m-8 {width: 66.66%;}
+        .col-m-9 {width: 75%;}
+        .col-m-10 {width: 83.33%;}
+        .col-m-11 {width: 91.66%;}
+        .col-m-12 {width: 100%;}
+
+				.horizontal-m-3{
+					width:20%;
+					float:left;
+				}
+				.horizontal-m-4{
+					width:60%;
+					float:left;
+				}
+
+				.form-one{
+					margin-right: 0%;
+					margin-bottom: 0%;
+				}
+
+		}
+@media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+				.horizontal-3{
+					width:30%;
+					float:left;
+				}
+				.horizontal-4{
+					width:30%;
+					float:left;
+				}
+				.horizontal-5{
+					width:40%;
+					float:left;
+				}
+
+      /*Modal box*/
+        .modal {
+            padding-top: 10%; /* Location of the box */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            width: 45%;
+        }
+      /*End Modal box*/
+
+
+				/*Header*/
+		header{
+			position:fixed;
+		    top:0;
+		    left:0;
+			right:0;
+		    z-index:9999;
+		    width:100%;
+		    height:50px;
+		}
+
+		li a img{
+			float: left;
+			width: 50px;
+			height:50px;
+			padding:11px;
+		}
+		li a.links{
+			float:right;
+			padding:27px;
+		}
+		li a.background{
+			padding:5px;
+		}
+		.headerDivider {
+			 border-left:1px solid white;
+			 border-right:1px solid white;
+			 height:30px;
+			 top:10px;
+			 float:right;
+			 margin-top: 15px;
+		}
+		/*Header*/
+
+		/*Images*/
+		#pay{
+			padding:3em;
+			height: 200px;
+			width: 300px;
+		}
+
+		img.logo{
+			width: 8.5%;
+			height: auto;
+			float: left;
+			margin-left:0%;
+		}
+
+		/*Images*/
+
+		body{
+			background-image: url(../Images/back.jpg);
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-position:center;
+			margin:0;
+		}
+    /*New account information box*/
+    .acc-box{
+      margin-right: 33.5%;
+    }
+    /*End New account information box*/
+		#superblock{
+			margin:auto;
+			width:70%;
+			margin-top:10%;
+		}
+		#header-box{
+			margin:auto;
+			width:90%;
+		}
+		#block1{
+			margin-top:6%;
+		}
+		input{
+			width:auto;
+		}
+		#clear{
+			clear:right;
+		}
+		.form-one{
+			margin-right: 0%;
+			margin-bottom: 0%;
+		}
+
+		.horizontal{
+			float:left;
+		}
+		#horizontal-margin{
+			margin-left: 34%;
+		}
+
+    #terms{
+      float:right;
+      width:48%;
+      padding-top: 4%;
+      padding-top: 1%;
+    }
+    #terms-check{
+      width:auto;
+      margin-top: 6%;
+    }
+    #terms-text{
+      font-family: Advent Pro;
+      color: white;
+      font-weight: bold;
+      width: 92%;
+      float: right;
+    }
+		/*Footer*/
+		.style{
+			width:70%;
+		}
+		.rest{
+			width:42px;
+			height:42px;
+		}
+		.fa{
+			margin-top:20px;
+			margin-right:10px;
+		}
+		/*End Footer*/
