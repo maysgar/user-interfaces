@@ -21,159 +21,111 @@
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script>
-		$(function() {
-			$("#draggable1").draggable({ revert: "valid" });
-			$("#draggable2").draggable({ revert: "valid" });
-			$("#draggable3").draggable({ revert: "valid" });
+		$(function(){
+			$( ".gallery" ).draggable({revert: "valid"});
 		});
-		$(function() {
-			$( "#draggable" ).draggable();
-			$("#draggable2").draggable();
-			$("#draggable3").draggable();
-			$( "#droppable" ).droppable({
+		$(function(){
+			$( "#video" ).droppable({
 			  drop: function( event, ui ) {
-				$( this )
-				  .addClass( "ui-state-highlight" )
-				  .find( "#video" )
-				  
-					var PRO = "https://www.youtube.com/embed/4B-wFx0aMlw";
-					var AUS = "https://www.youtube.com/embed/k_0UdJhl_rc";
-					var DUM = "https://www.youtube.com/embed/Nru316NF2h0";
-					var STU = "https://www.youtube.com/embed/E1iwrfgNOUU";
-
-					/*Possible Cases For Swapping*/
-					switch(document.getElementById("video").src){
-						/*El video lo cambia pero no se display???????*/
-						case PRO:
-							/*If video in iframe is PRO and image dragged is image1 then swap them*/
-							if(document.getElementById("image1").src == imageAUS) {
-								console.log(document.getElementById("video").src);
-								swap("image1","image4",AUS,"description0","description3","panel", "panel3","description0");
-								console.log(document.getElementById("video").src);
-								}
-							/*If video in iframe is PRO and image dragged is image2 then swap them*/
-							else if(document.getElementById("image2").src == imageDUM)
-								swap("image2","image4",DUM,"description1","description3","panel1", "panel3","description1");
-								
-							/*If video in iframe is PRO and image dragged is image3 then swap them*/
-							else swap("image3","image4",STU,"description2","description3","panel2", "panel3","description2");						
-						
-						case AUS:
-							/*If video in iframe is AUS and image dragged is image2 then swap them*/
-							if(document.getElementById("image2").src == imageDUM) 
-								swap("image2","image1",DUM,"description1","description0","panel1", "panel","description1");
-							
-							/*If video in iframe is AUS and image dragged is image3 then swap them*/
-							else if(document.getElementById("image3").src == imageSTU)
-								swap("image3","image1",STU,"description2","description3","panel2", "panel","description2");
-							
-							/*If video in iframe is AUS and image dragged is image4 then swap them*/
-							else swap("image4","image1",PRO,"description3","description3","panel3", "panel","description3");
-						
-						case DUM:
-							/*If video in iframe is DUM and image dragged is image1 then swap them*/
-							if(document.getElementById("image1").src == imageAUS) 
-								swap("image1","image2",AUS,"description0","description1","panel", "panel1","description0");
-							
-							/*If video in iframe is DUM and image dragged is image3 then swap them*/
-							else if(document.getElementById("image3").src == imageSTU)
-							swap("image3","image2",STU,"description2","description3","panel2", "panel2","description2");
-							
-							/*If video in iframe is DUM and image dragged is image4 then swap them*/
-							else swap("image4","image2",PRO,"description3","description3","panel3", "panel1","description3");
-						
-						case STU:
-							/*If video in iframe is STU and image dragged is image1 then swap them*/
-							if(document.getElementById("image1").src == imageAUS) 
-								swap("image1","image3",AUS,"description0","description2","panel", "panel2","description0");
-							
-							/*If video in iframe is STU and image dragged is image2 then swap them*/
-							else if(document.getElementById("image2").src == imageDUM)
-								swap("image2","image3",DUM,"description1","description2","panel1", "panel2","description1");
-							
-							/*If video in iframe is STU and image dragged is image4 then swap them*/
-							else swap("image4","image3",PRO,"description3","description3","panel3", "panel2","description3");
-					}
-				 			 
-				  /*
-				  var auxImage= document.getElementById("image4").src;
-				  var auxDes= document.getElementById("description3").innerHTML;
-				  var auxPanel= document.getElementById("panel3").innerHTML;
-				  var auxLink= document.getElementById("video").src;
-				  var link= "https://www.youtube.com/embed/k_0UdJhl_rc";
-				  
-				  document.getElementById("image4").src= document.getElementById("image1").src;
-				  document.getElementById("description3").innerHTML= document.getElementById("description0").innerHTML;
-				  document.getElementById("panel3").innerHTML= document.getElementById("panel").innerHTML;
-				  document.getElementById("video").src= link;
-				  
-				  document.getElementById("image1").src= auxImage;
-				  document.getElementById("description0").innerHTML= auxDes;
-				  document.getElementById("panel").innerHTML= auxPanel;
-				  link= auxLink;
-				  */
+				swap(event.target, ui.draggable.context.firstElementChild.firstElementChild);
 			  }
 			});
 		});
-		/*Values setted on mouseDown functions and can be used globally.
-			Used for knowing which possible iteration between the 4 videos is going to take action*/
-		var imagePRO;
-		var imageAUS;
-		var imageDUM;
-		var imageSTU;
-					
-		/*Image 1 is currently being dragged*/
-		function mouseDown1(){
-			$(document).ready(function(){
-				$("#image1").mousedown(function () {
-					imageAUS = document.getElementById("image1").src;
-					console.log(imageAUS);
-				});
-			});
-		}
-		/*Image 2 is currently being dragged*/
-		function mouseDown2(){
-			$(document).ready(function(){
-				$("#image2").mousedown(function () {
-					imageDUM = document.getElementById("image2").src;
-					console.log(imageDUM);
-				});
-			});
-		}
-		/*Image 3 is currently being dragged*/
-		function mouseDown3(){
-			$(document).ready(function(){
-				$("#image3").mousedown(function () {
-					imageSTU = document.getElementById("image3").src;
-					console.log(imageSTU);
-				});
-			});
-		}
-		/*Image 4 is currently being dragged*/
-		function mouseDown4(){
-			$(document).ready(function(){
-				$("#image4").mousedown(function () {
-					imagePRO = document.getElementById("image4").src;
-					console.log(imagePRO);
-				});
-			});
-		}
-		/*document.getElementById("droppable").firstChild.src = VIDEO*/
-		/*document.getElementById("feed")..children[0].children[0].src = IMAGEN*/  
 		
-		/*Swap function*/
-		function swap(inImage,outImage,src,description1,description2,panel1,panel2,title){
-			//set image that is dragged as the video image of the iframe
-			document.getElementById(inImage).src = document.getElementById(outImage).src;
-			//set the src video of the iframe to the one vinculated to the draggable image
-			document.getElementById("video").src = src;
-			//Change descriptions and video title into the new one
-			document.getElementById(description1).innerHTML = document.getElementById(description2).innerHTML;
-			document.getElementById(panel1).innerHTML = document.getElementById(panel2).innerHTML;
-			//Change title of main video
-			document.getElementById(title).innerHTML = document.getElementById(description2).innerHTML;
+		function swap(videoIframe, imageDrag){
+			var PRO = "https://www.youtube.com/embed/4B-wFx0aMlw";
+			var AUS = "https://www.youtube.com/embed/k_0UdJhl_rc";
+			var DUM = "https://www.youtube.com/embed/Nru316NF2h0";
+			var STU = "https://www.youtube.com/embed/E1iwrfgNOUU";
+			
+			var imagePRO = document.getElementById("image4").src;
+			var imageAUS = document.getElementById("image1").src;
+			var imageDUM = document.getElementById("image2").src;
+			var imageSTU = document.getElementById("image3").src;		
+			switch(videoIframe.src){
+				case PRO:
+					/*If video in iframe is PRO and image dragged is image1 then swap them*/
+					console.log(imageDrag.src + videoIframe.src);
+					if(imageDrag.src == imageAUS){
+						videoIframe.src = AUS; 
+						imageDrag.src = imagePRO;
+					}
+					/*If video in iframe is PRO and image dragged is image2 then swap them*/
+					else if(imageDrag.src == imageDUM){
+						videoIframe.src = DUM;
+						imageDrag.src = imagePRO;
+					}
+					/*If video in iframe is PRO and image dragged is image3 then swap them*/
+					else if(imageDrag.src == imageSTU){
+						videoIframe.src = STU;
+						imageDrag.src = imagePRO;
+					}
+					console.log(imageDrag.src + videoIframe.src);
+					break;
+				case AUS:
+					/*If video in iframe is AUS and image dragged is image2 then swap them*/
+					console.log(imageDrag.src + videoIframe.src);
+					if(imageDrag.src == imageDUM) {
+						videoIframe.src = DUM;
+						imageDrag.src = imageAUS;
+					}
+					/*If video in iframe is AUS and image dragged is image3 then swap them*/
+					else if(imageDrag.src == imageSTU){
+						videoIframe.src = STU;
+						imageDrag.src = imageAUS;
+					}
+					/*If video in iframe is AUS and image dragged is image4 then swap them*/
+					else if(imageDrag.src == imagePRO){ 
+						videoIframe.src = PRO;
+						imageDrag.src = imageAUS;
+					}
+					console.log(imageDrag.src + videoIframe.src);
+					break;
+				case DUM:
+				console.log(imageDrag.src + videoIframe.src);
+					/*If video in iframe is DUM and image dragged is image1 then swap them*/
+					if(imageDrag.src == imageAUS) {
+						videoIframe.src = AUS;
+						imageDrag.src = imageDUM;
+					}
+					/*If video in iframe is DUM and image dragged is image3 then swap them*/
+					else if(imageDrag.src == imageSTU){
+						videoIframe.src = STU;
+						imageDrag.src = imageDUM;
+					}
+					/*If video in iframe is DUM and image dragged is image4 then swap them*/
+					else if(imageDrag.src == imagePRO){
+						videoIframe.src = PRO;
+						imageDrag.src = imageDUM;
+					}
+					console.log(imageDrag.src + videoIframe.src);
+					break;
+				case STU:
+				console.log(imageDrag.src + videoIframe.src);
+					/*If video in iframe is STU and image dragged is image1 then swap them*/
+					if(imageDrag.src == imageAUS) {
+						videoIframe.src = AUS;
+						imageDrag.src = imageSTU;
+					}
+					/*If video in iframe is STU and image dragged is image2 then swap them*/
+					else if(imageDrag.src == imageDUM){
+						videoIframe.src = DUM;
+						imageDrag.src = imageSTU;
+					}
+					/*If video in iframe is STU and image dragged is image4 then swap them*/
+					else if(imageDrag.src == imagePRO){
+						videoIframe.src = PRO;
+						imageDrag.src = imageSTU;
+					}
+					console.log(imageDrag.src + videoIframe.src);
+					break;
+				default:
+					alert("Error 404");
+				break;
+			}
+			
 		}
-		</script>
+   </script>
 	</head>
 
     <body onload="popup()">
@@ -267,8 +219,8 @@
 					<!--video gallery-->
 			<div id="feed">
 				<div class="gallery" id="auxiliar1">
-					<div id="draggable1" class="ui-widget-content">
-						<img onload="mouseDown1()" id="image1" src="IMAGES/AUS.png" alt="AUS">
+					<div class="draggable">
+						<img id="image1" src="IMAGES/AUS.png" alt="AUS">
 				    </div>
 					<div>
 						<div id="description0" class="desc">Pink Guy - Are You Serious (Axel Boy Remix)</div>
@@ -278,8 +230,8 @@
 				</div>
 
 				<div class="gallery" id="auxiliar2">
-					<div id="draggable2" class="ui-widget-content">
-						<img onload="mouseDown2()" id="image2" src="IMAGES/DUM.png" alt="DUM">
+					<div class="draggable">
+						<img id="image2" src="IMAGES/DUM.png" alt="DUM">
 				    </div>
 					<div>
 						<div id="description1" class="desc">Pink Guy - Dumplings (Borgore Remix)</div>
@@ -289,8 +241,8 @@
 				</div>
 
 				<div class="gallery" id="auxiliar3">
-					<div id="draggable3" class="ui-widget-content">
-						 <img onload="mouseDown3()" id="image3" src="IMAGES/STU.png" alt="STU">
+					<div class="draggable">
+						 <img id="image3" src="IMAGES/STU.png" alt="STU">
 				    </div>
 					<div>
 						<div id="description2" class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>
@@ -299,8 +251,8 @@
 					</div>
 				</div>
 				<div class="gallery" id="auxiliar4">
-					<div id="draggable4" class="ui-widget-content">
-						<img onload="mouseDown4()" id="image4" src="IMAGES/PRO.png" alt="PRO">
+					<div class="draggable">
+						<img id="image4" src="IMAGES/PRO.png" alt="PRO">
 				    </div>
 					<div>
 						<div id="description3" class="desc">Pink Guy - The Prophecy</div>
