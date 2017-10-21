@@ -268,6 +268,7 @@
 			clear:right;
 			font-weight: bold;
 			color:white;
+			margin-top: 30%;
 		}
 
 		/*views, Likes and Shares*/
@@ -358,8 +359,15 @@
 			padding-left: 24%;
 			padding-right: 24%;
 			display: none;
+			color:white;
 		}
 
+		.links:link{
+			text-decoration: none;
+			color: blue;
+			background-color: transparent;
+		}
+		
 		/*Footer*/
 		#style{
 			width:100%;

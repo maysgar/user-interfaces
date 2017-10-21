@@ -1,3 +1,190 @@
+/*Function that swaps video, title, description of an element that is dropped in the iframe
+	Explanation is done in the first case and is the same for the rest of them considering 
+	all possible iterations between the videos. */
+function swap(videoIframe, imageDrag, title, description){
+	var PRO = "https://www.youtube.com/embed/4B-wFx0aMlw";
+	var AUS = "https://www.youtube.com/embed/k_0UdJhl_rc";
+	var DUM = "https://www.youtube.com/embed/Nru316NF2h0";
+	var STU = "https://www.youtube.com/embed/E1iwrfgNOUU";
+	
+	var imagePRO = "file:///C:/Users/Gabriel/Desktop/HTML/Ex5/IMAGES/PRO.png"; /*Error path de la imamgen*/
+	var imageAUS = "file:///C:/Users/Gabriel/Desktop/HTML/Ex5/IMAGES/AUS.png";
+	var imageDUM = "file:///C:/Users/Gabriel/Desktop/HTML/Ex5/IMAGES/DUM.png";
+	var imageSTU = "file:///C:/Users/Gabriel/Desktop/HTML/Ex5/IMAGES/STU.png";	
+
+	var desPRO = "Pink Guy - The Prophecy";
+	var desAUS = "Pink Guy - Are You Serious (Axel Boy Remix)";
+	var desDUM = "Pink Guy - Dumplings (Borgore Remix)";
+	var desSTU = "Pink Guy - Fried Noodles (Getter Remix)";
+	
+	switch(videoIframe.src){
+		case PRO:
+			/*If video in iframe is PRO and image dragged is image1 then swap them*/
+			if(imageDrag.src == imageAUS){
+				/*Swap image and iframe video*/
+				videoIframe.src = AUS; 
+				imageDrag.src = imagePRO;
+				/*Swap of the title of the iframe video and the title of the gallery dragged*/
+				title.innerHTML = desPRO;	
+				document.getElementById("title").innerHTML	= desAUS;	
+				/*[resetButton() function] Reset counters on swapped video*/
+				resetButton();
+				/*[swapDes() function] Swap by methods of an auxiliary variable (swapDescription) of the description of the video on the Iframe
+					and the one of the gallery dragged*/
+				swapDes(description);
+			}
+			/*If video in iframe is PRO and image dragged is image2 then swap them*/
+			else if(imageDrag.src == imageDUM){
+				videoIframe.src = DUM;
+				imageDrag.src = imagePRO;
+				title.innerHTML = desPRO;	
+				document.getElementById("title").innerHTML	= desDUM;	
+				resetButton();
+				swapDes(description);
+			}
+			/*If video in iframe is PRO and image dragged is image3 then swap them*/
+			else if(imageDrag.src == imageSTU){
+				videoIframe.src = STU;
+				imageDrag.src = imagePRO;
+				title.innerHTML = desPRO;
+				document.getElementById("title").innerHTML	= desSTU;	
+				resetButton();
+				swapDes(description);						
+			}
+			break;
+		case AUS:
+			/*If video in iframe is AUS and image dragged is image2 then swap them*/
+			if(imageDrag.src == imageDUM) {
+				videoIframe.src = DUM;
+				imageDrag.src = imageAUS;
+				title.innerHTML = desAUS;	
+				document.getElementById("title").innerHTML	= desDUM;
+				resetButton();
+				swapDes(description);
+			}
+			/*If video in iframe is AUS and image dragged is image3 then swap them*/
+			else if(imageDrag.src == imageSTU){
+				videoIframe.src = STU;
+				imageDrag.src = imageAUS;
+				title.innerHTML = desAUS;	
+				document.getElementById("title").innerHTML	= desSTU;
+				resetButton();
+				swapDes(description);
+			}
+			/*If video in iframe is AUS and image dragged is image4 then swap them*/
+			else if(imageDrag.src == imagePRO){ 
+				videoIframe.src = PRO;
+				imageDrag.src = imageAUS;
+				title.innerHTML = desAUS;	
+				document.getElementById("title").innerHTML	= desPRO;
+				resetButton();
+				swapDes(description);
+			}
+			break;
+		case DUM:
+			/*If video in iframe is DUM and image dragged is image1 then swap them*/
+			if(imageDrag.src == imageAUS) {
+				videoIframe.src = AUS;
+				imageDrag.src = imageDUM;
+				title.innerHTML = desDUM;	
+				document.getElementById("title").innerHTML	= desAUS;
+				resetButton();
+				swapDes(description);
+			}
+			/*If video in iframe is DUM and image dragged is image3 then swap them*/
+			else if(imageDrag.src == imageSTU){
+				videoIframe.src = STU;
+				imageDrag.src = imageDUM;
+				title.innerHTML = desDUM;	
+				document.getElementById("title").innerHTML	= desSTU;
+				resetButton();
+				swapDes(description);
+			}
+			/*If video in iframe is DUM and image dragged is image4 then swap them*/
+			else if(imageDrag.src == imagePRO){
+				videoIframe.src = PRO;
+				imageDrag.src = imageDUM;
+				title.innerHTML = desDUM;	
+				document.getElementById("title").innerHTML	= desPRO;
+				resetButton();
+				swapDes(description);
+			}
+			break;
+		case STU:
+			/*If video in iframe is STU and image dragged is image1 then swap them*/
+			if(imageDrag.src == imageAUS) {
+				videoIframe.src = AUS;
+				imageDrag.src = imageSTU;
+				title.innerHTML = desSTU;	
+				document.getElementById("title").innerHTML	= desAUS;
+				resetButton();
+				swapDes(description);
+			}
+			/*If video in iframe is STU and image dragged is image2 then swap them*/
+			else if(imageDrag.src == imageDUM){
+				videoIframe.src = DUM;
+				imageDrag.src = imageSTU;
+				title.innerHTML = desSTU;	
+				document.getElementById("title").innerHTML	= desDUM;
+				resetButton();
+				swapDes(description);
+			}
+			/*If video in iframe is STU and image dragged is image4 then swap them*/
+			else if(imageDrag.src == imagePRO){
+				videoIframe.src = PRO;
+				imageDrag.src = imageSTU;
+				title.innerHTML = desSTU;	
+				document.getElementById("title").innerHTML	= desPRO;
+				resetButton();
+				swapDes(description);
+			}
+			break;
+		default:
+			alert("Error 404");
+		break;
+	}
+}
+
+//Resets like and share buttons when videos are swapped
+function resetButton(){
+	var resetLikes = "0 Likes";
+	var resetShares = "0 Shares";
+	
+	document.getElementById("likes").innerHTML = resetLikes;
+	counter_likes = 0;
+	document.getElementById("shares").innerHTML = resetShares;
+	counter_shares = 0;
+}
+
+//Function that swaps descriptions when function swap is called
+function swapDes(description){
+	var swapDescription;
+	
+	swapDescription = description.innerHTML;
+	description.innerHTML = document.getElementById("description").innerHTML;
+	document.getElementById("description").innerHTML = swapDescription;
+}
+
+//Drop and Drag functions. Drop function calls [swap() function] stated above. 
+$(function(){
+	$( ".gallery" ).draggable({revert: "valid"});
+});
+$(function(){
+	$( "#video" ).droppable({
+	  drop: function( event, ui ) {
+		/*4 arguments: 
+		[0] - droppable zone, Iframe. 
+		[1] - Entire box that is being dragged. 
+		[2] - Division inside the box that has access to the title of the dragged box. 
+		[3] - Division inside the div class=box that has access to the desrciption of the video.*/
+		swap(event.target, ui.draggable.context.firstElementChild.firstElementChild, ui.helper.context.children[1].firstElementChild, ui.helper.context.children[1].children[2]);
+	  }
+	});
+});
+
+/*End of functions for swapping elements*/
+/*******************************************************************************************************/
+/*******************************************************************************************************/
 
 
 //Show modal box when page is loaded
@@ -7,22 +194,18 @@ function popup(){
 }
 
 /*Counter functions for likes and shares*/
-var counter_likes = 886213;
-var counter_shares = 79542;
-var counter_views = 1447862;
+var counter_likes = 0;
+var counter_shares = 0;
+
 function add_likes() {
     return counter_likes += 1;
 }
 function add_shares() {
     return counter_shares += 1;
 }
-function add_views() {
-    return counter_views += 1;
-}
 function counter_function(counter){
 	if(counter == likes) document.getElementById("likes").textContent = add_likes() + " Likes";
-	else if(counter == shares) document.getElementById("shares").textContent = add_shares() + " Shares";
-	else document.getElementById("views").textContent = add_views() + " Views";
+	else document.getElementById("shares").textContent = add_shares() + " Shares";
 }
 
 /*Description boxes slide*/

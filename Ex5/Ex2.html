@@ -20,112 +20,6 @@
 		<link rel="stylesheet" href="/resources/demos/style.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script>
-		$(function(){
-			$( ".gallery" ).draggable({revert: "valid"});
-		});
-		$(function(){
-			$( "#video" ).droppable({
-			  drop: function( event, ui ) {
-				swap(event.target, ui.draggable.context.firstElementChild.firstElementChild);
-			  }
-			});
-		});
-		
-		function swap(videoIframe, imageDrag){
-			var PRO = "https://www.youtube.com/embed/4B-wFx0aMlw";
-			var AUS = "https://www.youtube.com/embed/k_0UdJhl_rc";
-			var DUM = "https://www.youtube.com/embed/Nru316NF2h0";
-			var STU = "https://www.youtube.com/embed/E1iwrfgNOUU";
-			
-			var imagePRO = document.getElementById("image4").src;
-			var imageAUS = document.getElementById("image1").src;
-			var imageDUM = document.getElementById("image2").src;
-			var imageSTU = document.getElementById("image3").src;		
-			switch(videoIframe.src){
-				case PRO:
-					/*If video in iframe is PRO and image dragged is image1 then swap them*/
-					console.log(imageDrag.src + videoIframe.src);
-					if(imageDrag.src == imageAUS){
-						videoIframe.src = AUS; 
-						imageDrag.src = imagePRO;
-					}
-					/*If video in iframe is PRO and image dragged is image2 then swap them*/
-					else if(imageDrag.src == imageDUM){
-						videoIframe.src = DUM;
-						imageDrag.src = imagePRO;
-					}
-					/*If video in iframe is PRO and image dragged is image3 then swap them*/
-					else if(imageDrag.src == imageSTU){
-						videoIframe.src = STU;
-						imageDrag.src = imagePRO;
-					}
-					console.log(imageDrag.src + videoIframe.src);
-					break;
-				case AUS:
-					/*If video in iframe is AUS and image dragged is image2 then swap them*/
-					console.log(imageDrag.src + videoIframe.src);
-					if(imageDrag.src == imageDUM) {
-						videoIframe.src = DUM;
-						imageDrag.src = imageAUS;
-					}
-					/*If video in iframe is AUS and image dragged is image3 then swap them*/
-					else if(imageDrag.src == imageSTU){
-						videoIframe.src = STU;
-						imageDrag.src = imageAUS;
-					}
-					/*If video in iframe is AUS and image dragged is image4 then swap them*/
-					else if(imageDrag.src == imagePRO){ 
-						videoIframe.src = PRO;
-						imageDrag.src = imageAUS;
-					}
-					console.log(imageDrag.src + videoIframe.src);
-					break;
-				case DUM:
-				console.log(imageDrag.src + videoIframe.src);
-					/*If video in iframe is DUM and image dragged is image1 then swap them*/
-					if(imageDrag.src == imageAUS) {
-						videoIframe.src = AUS;
-						imageDrag.src = imageDUM;
-					}
-					/*If video in iframe is DUM and image dragged is image3 then swap them*/
-					else if(imageDrag.src == imageSTU){
-						videoIframe.src = STU;
-						imageDrag.src = imageDUM;
-					}
-					/*If video in iframe is DUM and image dragged is image4 then swap them*/
-					else if(imageDrag.src == imagePRO){
-						videoIframe.src = PRO;
-						imageDrag.src = imageDUM;
-					}
-					console.log(imageDrag.src + videoIframe.src);
-					break;
-				case STU:
-				console.log(imageDrag.src + videoIframe.src);
-					/*If video in iframe is STU and image dragged is image1 then swap them*/
-					if(imageDrag.src == imageAUS) {
-						videoIframe.src = AUS;
-						imageDrag.src = imageSTU;
-					}
-					/*If video in iframe is STU and image dragged is image2 then swap them*/
-					else if(imageDrag.src == imageDUM){
-						videoIframe.src = DUM;
-						imageDrag.src = imageSTU;
-					}
-					/*If video in iframe is STU and image dragged is image4 then swap them*/
-					else if(imageDrag.src == imagePRO){
-						videoIframe.src = PRO;
-						imageDrag.src = imageSTU;
-					}
-					console.log(imageDrag.src + videoIframe.src);
-					break;
-				default:
-					alert("Error 404");
-				break;
-			}
-			
-		}
-   </script>
 	</head>
 
     <body onload="popup()">
@@ -189,20 +83,17 @@
 			<div id="Data">
 				<div id="stats">
 					<div class="data1">
-						<img src="IMAGES/view.png" alt="view">
-						<p id="views" class="font"> Views</p>
-					</div>
-					<div class="data1">
 						<input class="img_logo" type="image" src="IMAGES/like.png" alt="like" onclick="counter_function(likes)">
-						<p id="likes" class="font"> Likes</p>
+						<p id="likes" class="font">0 Likes</p>
 					</div>
 					<div class="data1">
 						<input class="img_logo" type="image" src="IMAGES/share.png" alt="share" onclick="counter_function(shares)">
-						<p id="shares" class="font"> Shares</p>
+						<p id="shares" class="font">0 Shares</p>
 					</div>
 				</div>
 
-				<p id="description">Available on iTunes: <a target="_blank" href="https://itun.es/i67g4nD">https://itun.es/i67g4nD</a></p>
+				<p id="description">LISTEN HERE: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+									Directed by Saint / @directedbysaint</p>
 			</div>
 			<!--End Data video and description-->
 
@@ -222,10 +113,13 @@
 					<div class="draggable">
 						<img id="image1" src="IMAGES/AUS.png" alt="AUS">
 				    </div>
-					<div>
-						<div id="description0" class="desc">Pink Guy - Are You Serious (Axel Boy Remix)</div>
+					<div class="box">
+						<div class="desc">Pink Guy - Are You Serious (Axel Boy Remix)</div>
 						<div id="flip" class="plus"><img onclick="slide(panel)" class="wimg" src="./Images/follow.png" alt="other"></div>
-						<div id="panel">DESCRIPCION</div>
+						<div id="panel">Download/stream Pink Guy: The Prophecy: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+										Featuring reimaginations from Axel Boy<br>
+										Directed by Saint / @directedbysaint <br>
+										Made with love by 88rising</div>
 					</div>
 				</div>
 
@@ -233,10 +127,13 @@
 					<div class="draggable">
 						<img id="image2" src="IMAGES/DUM.png" alt="DUM">
 				    </div>
-					<div>
-						<div id="description1" class="desc">Pink Guy - Dumplings (Borgore Remix)</div>
+					<div class="box">
+						<div class="desc">Pink Guy - Dumplings (Borgore Remix)</div>
 						<div id="flip1" class="plus"><img onclick="slide(panel1)" class="wimg" src="./Images/follow.png" alt="other"></a></div>
-						<div id="panel1">DESCRIPCION</div>
+						<div id="panel1">Download/stream Pink Guy: The Prophecy: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+										Featuring reimaginations from Borgore<br>
+										Directed by Saint / @directedbysaint <br>
+										Made with love by 88rising</div>
 					</div>
 				</div>
 
@@ -244,20 +141,24 @@
 					<div class="draggable">
 						 <img id="image3" src="IMAGES/STU.png" alt="STU">
 				    </div>
-					<div>
-						<div id="description2" class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>
+					<div class="box">
+						<div class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>
 						<div id="flip2" class="plus"><img onclick="slide(panel2)" class="wimg" src="./Images/follow.png" alt="other"></a></div>
-						<div id="panel2">DESCRIPCION</div>
+						<div id="panel2">Download/stream Pink Guy: The Prophecy: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+										Featuring reimaginations from Getter<br>
+										Directed by Saint / @directedbysaint <br>
+										Made with love by 88rising</div>
 					</div>
 				</div>
 				<div class="gallery" id="auxiliar4">
 					<div class="draggable">
 						<img id="image4" src="IMAGES/PRO.png" alt="PRO">
 				    </div>
-					<div>
-						<div id="description3" class="desc">Pink Guy - The Prophecy</div>
+					<div class="box">
+						<div class="desc">Pink Guy - The Prophecy</div>
 						<div id="flip3" class="plus"><img onclick="slide(panel3)" class="wimg" src="./Images/follow.png" alt="other"></div>
-						<div id="panel3">DESCRIPCION</div>
+						<div id="panel3">LISTEN HERE: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+										Directed by Saint / @directedbysaint</div>
 					</div>
 				</div>
 			</div>
