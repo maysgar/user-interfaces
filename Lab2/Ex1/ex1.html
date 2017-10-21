@@ -94,7 +94,7 @@
 				<br><br>
 
 				Birthday*<br><br>
-				<input type="date" name="birthday" min="1999-09-11" required>
+				<input type="date" id="birthday" name="birthday" min="1999-09-11" required>
 				<br><br><br>
 			</b></form>
 
@@ -170,7 +170,7 @@
 
 		<!--Paypal Option-->
 		<div onsubmit="return obligatoryFields()" method="post" id="pay2">
-			<a href="https://www.paypal.com/" target="_blank">Paypal</a>
+			<a id="paypalOption" href="https://www.paypal.com/" target="_blank">Click here to pay</a>
 		</div>
 
 
@@ -178,13 +178,13 @@
 		<div id="pay3" class="col-12 col-m-12">
 			<form name="myForm5" autocomplete="on" id="horizontal-margin" onsubmit="return obligatoryFields()" method="post">
 				<div class="horizontal-5 horizontal-m-4">Holder name*
-					<input class="form-one col-11 col-m-11" type="text" id="creditcard" name="creditcard" required>
+					<input class="form-one col-11 col-m-11" type="text" id="holder-name" name="holder-name" required>
 				</div>
 				<div class="horizontal-3 horizontal-m-3">Account number*
-					<input class="form-one col-10 col-m-9" type="text" id="expirationdate" name="expirationdate" required>
+					<input class="form-one col-10 col-m-9" type="text" id="acc-number" name="acc-number" required>
 				</div>
 				<div class="horizontal-3 horizontal-m-3">Bank name*
-					<input class="form-one col-m-9" id="securitycode" name="securitycode" autocomplete="off" required>
+					<input class="form-one col-m-9" id="bank-name" name="bank-name" autocomplete="off" required>
 				</div>
 			</form>
 		</div>
@@ -202,7 +202,7 @@
 			</div>
 
 			<div class="center">
-				<form onclick="return obligatoryFields()" method="post">
+				<form onclick="return obligatoryFields(); changesModal()" method="post">
 					<input type="button" value="Save">
 				</form>
 			</div>
@@ -215,6 +215,7 @@
 
 		</div>
 	</div>
+
     <!--End main box-->
 
 		<footer class="style">  <!--Footer-->
