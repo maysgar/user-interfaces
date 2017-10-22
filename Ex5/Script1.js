@@ -241,8 +241,9 @@ function checkCookie(){
 	if(user != ""){
 		alert("Welcome." + user);
 		//Set all the cookie values of the log in on fields
-		document.getElementById("margin-account").innerHTML = getCookie("username");
-		document.getElementById("account").src = getCookie("profilePic");
+		document.getElementById("margin-account").innerHTML = getCookie("username0");
+		//We cannot load the picture cookie since JS does not have the permission to store the path of an uploaded picture
+		//document.getElementById("account").src = getCookie("profilePic");
 		//load profile piccture and username
 
 	}
