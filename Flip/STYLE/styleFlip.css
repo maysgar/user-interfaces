@@ -1,0 +1,22 @@
+#main-box{
+	width: 800px;
+	height: 900px;
+	background-color: pink;
+	perspective: 600px;
+}
+img{
+	width:200px;
+	height:200px;
+	border-radius: 25px;
+}
+
+.face {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+    backface-visibility: hidden;
+}
+.face.back {
+    display: block;
+    transform: rotateY(180deg);
+}
