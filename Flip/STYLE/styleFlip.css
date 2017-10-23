@@ -20,3 +20,8 @@ img{
     display: block;
     transform: rotateY(180deg);
 }
+
+.transform{
+	transform-style: preserve-3d;
+	transition:all 0.5s;
+}
