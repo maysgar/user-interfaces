@@ -92,3 +92,11 @@ function startGame(){
   }
   document.getElementById("board").innerHTML = output;
 }
+
+function restart(){
+	//randomBoxes(); //toggle the boxes
+	countdown(); //start the countdown again
+	//restart_counter(); //score to 0 
+	
+	
+}
