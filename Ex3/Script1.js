@@ -46,15 +46,17 @@ function flipImage(box, content){
 
         // Get todays date and time
         var now = new Date().getTime();
-
         // Find the distance between now an the count down date
         var distance = deadline - now;
-
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
         // Output the result in an element with id="demo"
-        document.getElementById("timer").innerHTML = seconds + " seconds left ";
-
+		if(distance >= 60000){
+			console.log(distance);
+			document.getElementById("timer").innerHTML = " 1 minute : " + seconds + " seconds left ";
+		}
+		if(distance < 60000 && distance > 0){
+			document.getElementById("timer").innerHTML = " 0 minute : " + seconds + " seconds left ";
+		}
         // If the count down is over, end the game
         if (distance < 0) {
             alert("       GAME OVER\n \nBetter luck next time!");
