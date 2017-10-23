@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+	<!-- Information-->
+	<head>
+		<title>StreamingHub</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Exercise 1 User Interfaces">
+		<meta name="keywords" content="HTML,CSS">
+		<meta name="author" content="Ismael Garrido Mansoa & Gabriel García López">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+		<link href='./STYLE/style.css' rel='stylesheet'>
+		<link href='./IMAGES' rel='stylesheet'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="Script1.js"></script>
+		<!--Scripts imported for the drag and drop operations-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	</head>
+
+    <body onload="popup()">
+		<div id="main-box">
+		
+		<header id="header-box">
+			<ul>
+				<li><a href="#"><img id="account" src="IMAGES/acc.png"	alt="acc"></a></li>
+				<li><h2 id="margin-account">George Miller</h2></li>
+				<li><a href="ex2.html"><img id="logo" src="./IMAGES/logo.png" alt="Logo"></a></li>
+				<li><h2>StreamingHub</h2></li>
+			</ul>
+		</header>
+		<!--End Header-->
+		
+		
+
+		<div id="block1">
+		<!--Modal dialog box for user and password-->
+			<!-- Trigger/Open The Modal -->
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2>StreamingHub</h2>
+					</div>
+
+					<form class="modal-body">
+						<div class="container">
+						<label><b>Username</b></label>
+						<input class="modal-input" id="username" type="email" placeholder="Email" name="username" required>
+
+						<label><b>Password</b></label>
+						<input class="modal-input" type="password" id="password" placeholder="Password" name="password" required>
+
+						<input type="checkbox" checked="checked" id="check"> Keep me signed in
+						<span class="psw"><a href="#">Forgot password?</a></span>
+						<button onclick="checkCookie()" id="sign-in" type="button">Login</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--End Modal dialog box-->
+			<!--Video Displayer-->
+
+			<!--**************************************************************************-->
+			<!--The frameborder attribute is obsolete, and the solution is the css attribute
+			'steamless' but currently is not supported by the majority of the browsers
+			so we decided to leave 'frameborder' as the attribute-->
+			<!--**************************************************************************-->
+			<div id="droppable" class="ui-widget-content">
+			<iframe src="https://www.youtube.com/embed/4B-wFx0aMlw" frameborder="0" id="video" allowfullscreen></iframe>
+			</div>
+			<!--End Video Displayer-->
+
+			<!--video title-->
+			<h1 id="title" class="font1">Pink Guy: The Prophecy</h1>
+			<!--End video title-->
+
+			<!--Data video and description-->
+			<div id="Data">
+				<div id="stats">
+					<div class="data1">
+						<input class="img_logo" type="image" src="IMAGES/like.png" alt="like" onclick="counter_function(likes)">
+						<p id="likes" class="font">0 Likes</p>
+					</div>
+					<div class="data1">
+						<input class="img_logo" type="image" src="IMAGES/share.png" alt="share" onclick="counter_function(shares)">
+						<p id="shares" class="font">0 Shares</p>
+					</div>
+				</div>
+
+				<p id="description">LISTEN HERE: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+									Directed by Saint / @directedbysaint</p>
+			</div>
+			<!--End Data video and description-->
+
+			<!--Second box:other videos-->
+		</div>
+
+		<!--second header for the second box-->
+		<div id="adjustbottom">
+			<div class="font1">
+				<h1 id="othervideos">Other videos</h1>
+			</div>
+			<!--end second header for the second box-->
+
+					<!--video gallery-->
+			<div id="feed">
+				<div class="gallery" id="auxiliar1">
+					<div class="draggable">
+						<img id="image1" src="IMAGES/AUS.png" alt="AUS">
+				    </div>
+					<div class="box">
+						<div class="desc">Pink Guy - Are You Serious (Axel Boy Remix)</div>
+						<div id="flip" class="plus"><img onclick="slide(panel)" class="wimg" src="./Images/follow.png" alt="other"></div>
+						<div id="panel">Download/stream Pink Guy: The Prophecy: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+										Featuring reimaginations from Axel Boy<br>
+										Directed by Saint / @directedbysaint <br>
+										Made with love by 88rising</div>
+					</div>
+				</div>
+
+				<div class="gallery" id="auxiliar2">
+					<div class="draggable">
+						<img id="image2" src="IMAGES/DUM.png" alt="DUM">
+				    </div>
+					<div class="box">
+						<div class="desc">Pink Guy - Dumplings (Borgore Remix)</div>
+						<div id="flip1" class="plus"><img onclick="slide(panel1)" class="wimg" src="./Images/follow.png" alt="other"></a></div>
+						<div id="panel1">Download/stream Pink Guy: The Prophecy: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+										Featuring reimaginations from Borgore<br>
+										Directed by Saint / @directedbysaint <br>
+										Made with love by 88rising</div>
+					</div>
+				</div>
+
+				<div class="gallery" id="auxiliar3">
+					<div class="draggable">
+						 <img id="image3" src="IMAGES/STU.png" alt="STU">
+				    </div>
+					<div class="box">
+						<div class="desc">Pink Guy - Fried Noodles (Getter Remix)</div>
+						<div id="flip2" class="plus"><img onclick="slide(panel2)" class="wimg" src="./Images/follow.png" alt="other"></a></div>
+						<div id="panel2">Download/stream Pink Guy: The Prophecy: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+										Featuring reimaginations from Getter<br>
+										Directed by Saint / @directedbysaint <br>
+										Made with love by 88rising</div>
+					</div>
+				</div>
+				<div class="gallery" id="auxiliar4">
+					<div class="draggable">
+						<img id="image4" src="IMAGES/PRO.png" alt="PRO">
+				    </div>
+					<div class="box">
+						<div class="desc">Pink Guy - The Prophecy</div>
+						<div id="flip3" class="plus"><img onclick="slide(panel3)" class="wimg" src="./Images/follow.png" alt="other"></div>
+						<div id="panel3">LISTEN HERE: <a class="links" target="_blank" href="http://smarturl.it/pinkprophecy">http://smarturl.it/pinkprophecy</a><br>
+										Directed by Saint / @directedbysaint</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end video gallery-->
+		</div>
+		<!--End second box:other videos-->
+
+		<!--Footer-->
+		<footer id="style">  <!--Footer-->
+			<ul>
+				<li>
+					<p id="pStyle">&#169; StreamingHub</p></li>
+				<li><a class="background" href="#" target="_blank">
+					<img class="rest" src="./Images/contact.png" alt="contact-icon">
+				</a></li>
+				<li><a class="background" href="https://www.twitter.com/" target="_blank">
+					<div class="headerDivider"></div>
+					<img class="rest" src="./Images/twitter.png" alt="Twitter-icon">
+				</a></li>
+				<li><a class="background" href="https://www.facebook.com/" target="_blank">
+					<div class="headerDivider"></div>
+					<img class="rest" src="./Images/facebook.png" alt="Facebook-icon">
+				</a></li>
+				<li><a class="background" href="https://www.instagram.com/" target="_blank">
+					<div class="headerDivider"></div>
+					<img class="rest" src="./Images/instagram.png" alt="instagram-icon">
+				</a></li>
+			</ul>
+		</footer>  <!--End of the footer-->
+	</body>
+</html>
