@@ -6,18 +6,40 @@ var flipped_array = [];
 var memory_images = [];
 //Number that can only go up to 2 and represents the actual images flipped on board 
 var imagesFlipped = 0;
+var winner = 0;
 
 $(document).ready(function(){
 	$(".front").click(function(ui){
+		console.log("I am clicked "+ui.currentTarget.parentElement.id);
+		//If there are 2 images flipped and they are not the same
+		if(imagesFlipped == 2 && flipped_array[0] != flipped_array[1]){
+			$("#"+memory_images[0]).css("transform", "rotateY(0)");
+			$("#"+memory_images[1]).css("transform", "rotateY(0)");
+			memory_images = [];
+			flipped_array = [];
+			imagesFlipped = 0;
+		}
+		//If the two images flipped are the same
+		else if(imagesFlipped == 2 && flipped_array[0] == flipped_array[1]){
+			memory_images = [];
+			flipped_array = [];
+			imagesFlipped = 0;
+			winner++;
+		}
 		$("#"+ui.currentTarget.parentElement.id).css("transform", "rotateY(180deg)");
-		checkValidity();
+		checkValidity(ui.currentTarget.parentElement.id, ui.currentTarget.parentElement.childNodes[1].firstElementChild.src);
 	});
 });
 
 function checkValidity(id, src){
+	if(winner == ((images_array.length)/2)-1){
+		alert("WINNER");
+		return true;
+	}
 	imagesFlipped++;
+	console.log(memory_images);
+	console.log(flipped_array);
 	//Pushes into the array the image of the flipped panel, 1st box flipped
-	console.log(imagesFlipped);
 	if(memory_images.length < 2 && flipped_array < 2 && imagesFlipped == 1){
 		memory_images.push(id);
 		flipped_array.push(src);
@@ -33,27 +55,15 @@ function checkValidity(id, src){
 		//Checks both src of the boxes
 		if(flipped_array[0] == flipped_array[1]){
 			//If they are the same, you cannot flip them anymore
-			document.getElementById(memory_images[0]).classList.remove("transform");
-			document.getElementById(memory_images[1]).classList.remove("transform");
+			console.log("Match");
 			//Añadir +1 contador
-			//Empty the arrays
-			memory_images = [];
-			flipped_array = [];
-			imagesFlipped = 0;
 		}
 		//Else empty the arrays and rotate back the panels
 		else{
-			rotateAuto();
-			memory_images = [];
-			flipped_array = [];
-			imagesFlipped = 0;	
+			console.log("Wrong");
+			$("#"+memory_images[1]).css("transform","rotateY(180)");
 		}	
 	}
-}
-
-function rotateAuto(){
-	$("#"+memory_images[0]).css("transform","rotateY(0)");
-	$("#"+memory_images[1]).css("transform","rotateY(0)");
 }
 
 function board(){
