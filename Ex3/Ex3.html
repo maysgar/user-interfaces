@@ -2,6 +2,7 @@
 <html>
 
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <meta name="description" content="Exercise 3 User Interfaces">
 <meta name="keywords" content="HTML,CSS, JS">
@@ -11,7 +12,7 @@
 <link rel="stylesheet" href="./STYLE/style.css">
 <link href='./IMAGES' rel='stylesheet'>
 <script src="Script1.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -24,9 +25,9 @@
     Select the time in seconds (10 - 120 seconds):
     <input id="inputSeconds" name="inputSeconds">
 
-    <button onclick="startGame(); countDown()" type="button">Play</button>
+    <button id="start" onclick="countDown()" type="button">Play</button>
 	
-	<button id="restartButton" onclick="restart()" type="button">Restart</button>
+	<!--<button id="restartButton" onclick="restart()" type="button">Restart</button>-->
   </form>
 </div>
 
@@ -35,7 +36,6 @@
 </div>
 
 <div id="board">
-
 </div>
 
 </body>
