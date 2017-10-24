@@ -1,9 +1,9 @@
 
-var images_array = ['IMAGES/1.jpg','./IMAGES/1.jpg','./IMAGES/2.jpg','./IMAGES/2.jpg','./IMAGES/3.jpg','./IMAGES/3.jpg','./IMAGES/4.jpg','./IMAGES/4.jpg','./IMAGES/5.jpg','./IMAGES/5.jpg','./IMAGES/6.jpg','./IMAGES/6.jpg','IMAGES/7.jpg','IMAGES/7.jpg','IMAGES/8.jpg','IMAGES/8.jpg','IMAGES/9.png','IMAGES/9.png','IMAGES/10.jpg','IMAGES/10.jpg']; 
+var images_array = ['IMAGES/1.jpg','./IMAGES/1.jpg','./IMAGES/2.jpg','./IMAGES/2.jpg','./IMAGES/3.jpg','./IMAGES/3.jpg','./IMAGES/4.jpg','./IMAGES/4.jpg','./IMAGES/5.jpg','./IMAGES/5.jpg','./IMAGES/6.jpg','./IMAGES/6.jpg','IMAGES/7.jpg','IMAGES/7.jpg','IMAGES/8.jpg','IMAGES/8.jpg','IMAGES/9.png','IMAGES/9.png','IMAGES/10.jpg','IMAGES/10.jpg'];
 //Array for pushing in only two images to see if they are the same
 var flipped_array = [];
 var memory_images = [];
-//Number that can only go up to 2 and represents the actual images flipped on board 
+//Number that can only go up to 2 and represents the actual images flipped on board
 var imagesFlipped = 0;
 var winner = 0;
 
@@ -54,25 +54,25 @@ function checkValidity(id, src){
 			winner++;
 			counterScore();
 			if(winner == document.getElementById("inputImages").value && imagesFlipped == 2){
-				alert("               WINNER\n        Congratulations!!\n Time spent:\n" + document.getElementById("timer").innerHTML);
+				alert("               WINNER\nCongratulations!!\n Time spent:\n" + document.getElementById("timer").innerHTML);
+				clearTimeout(x);
 			}
-			//Añadir +1 contador
 		}
 		//Else empty the arrays and rotate back the panels
 		else{
 			$("#"+memory_images[1]).css("transform","rotateY(180)");
-		}	
+		}
 	}
 }
 
-//Durstenfeld Shuffle 
+//Durstenfeld Shuffle
 function randomBoxes(array){
   var y1 = document.getElementById("inputImages").value; //number of input images
   var y2 = document.getElementById("inputSeconds").value; //number of seconds
   var y3 = y1*2; //number of boxes
   var j;
   var aux;
-  
+
   for(var i= 0; i < y3; i++){
     j = Math.floor(Math.random()*(y3-i-1));
     aux = array[j];
@@ -106,7 +106,7 @@ function randomBoxes(array){
 		}
         // If the count down is over, end the game
         if (distance < 0) {
-            alert("       GAME OVER\n \nBetter luck next time!");
+            alert("       GAME OVER\n Better luck next time!");
             clearTimeout(x);
             document.getElementById("timer").innerHTML = "The time has expired";
             return false;
@@ -134,13 +134,13 @@ function startGame(){
   randomBoxes(images_array);
   var display = "";
 	for(var i = 0; i< y3; i++){
-		//Create the necessary images to play with 
-		display += '<div id="panel_'+i+'"><div class="front face"><img id="image_'+i+'" src="./IMAGES/meme.jpg"></div><div id="backimage_'+i+'" class="back face center"><img src="'+images_array[i]+'"></div></div>';
+		//Create the necessary images to play with
+		display += '<div id="panel_'+i+'"><div class="front face"><img id="image_'+i+'" src="./IMAGES/mystery.jpg"></div><div id="backimage_'+i+'" class="back face center"><img src="'+images_array[i]+'"></div></div>';
 	}
 	document.getElementById("board").innerHTML = display;
 	for(var i = 0; i< y3; i++){
 		//Set css properties for each different panel
-		$("#panel_"+i).css({"width": "200px","height": "200px" ,"margin": "10px" ,"float": "left","transform-style": "preserve-3d","transition":"all 0.5s"});
+		$("#panel_"+i).css({"width": "200px","height": "200px" ,"margin": "10px" , "float": "left","transform-style": "preserve-3d","transition":"all 0.5s"});
 		//Set cursor when hovering on panels
 		$("#panel_"+i).hover(function(){
 			$(this).css("cursor","pointer");
@@ -152,11 +152,48 @@ function restart(){
 	winner = 0;
 	clearTimeout(x);
 	counterScore();
+  winner = 0;
 	startGame();
 	countDown();
+	$(".front").click(function(ui){
+		//If there are 2 images flipped and they are not the same
+		if(imagesFlipped == 2 && flipped_array[0] != flipped_array[1]){
+			$("#"+memory_images[0]).css("transform", "rotateY(0)");
+			$("#"+memory_images[1]).css("transform", "rotateY(0)");
+			memory_images = [];
+			flipped_array = [];
+			imagesFlipped = 0;
+		}
+		//If the two images flipped are the same
+		else if(imagesFlipped == 2 && flipped_array[0] == flipped_array[1]){
+			memory_images = [];
+			flipped_array = [];
+			imagesFlipped = 0;
+		}
+		$("#"+ui.currentTarget.parentElement.id).css("transform", "rotateY(180deg)");
+		checkValidity(ui.currentTarget.parentElement.id, ui.currentTarget.parentElement.childNodes[1].firstElementChild.src);
+	});
 }
 
 function counterScore(){
 	document.getElementById("score").innerHTML = "Found pairs: " +winner;
 	document.getElementById("score").style.display= "block";
+}
+
+function createBox(){
+
+	var nImages = document.getElementById("inputImages").value;
+	if(nImages == 3){
+		document.getElementById("board").style.width = "800px";
+	}
+	if(nImages == 5 || nImages == 6){
+		document.getElementById("board").style.height = "670px";
+	}
+	 if(nImages == 7 || nImages == 8){
+		document.getElementById("board").style.height = "890px";
+	}
+	if(nImages == 9 || nImages == 10){
+		document.getElementById("board").style.height = "1110px";
+  }
+
 }

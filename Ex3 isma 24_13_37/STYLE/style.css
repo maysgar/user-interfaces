@@ -1,3 +1,13 @@
+
+body{
+  background-image: url(../images/back.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-attachment:fixed;
+  margin:0;
+}
+
 #inputImages, #inputSeconds{
     width: 100%;
     padding: 12px 20px;
@@ -18,11 +28,11 @@ button[type=button] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-	font-weight: bold;
+	  font-weight: bold;
 }
 
 button[type=button]:hover {
-    background-color: #45a049;
+    background-color: #CCC;
 }
 
 #inputForm{
@@ -30,8 +40,8 @@ button[type=button]:hover {
     background-color: #f2f2f2;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-	width: 25%;
-	margin-left: 36%;
+	  width: 30%;
+	  margin-left: 36%;
 }
 
 #timer{
@@ -41,15 +51,16 @@ button[type=button]:hover {
   border: 2px solid #888;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  width: 40%;
-  margin-left: 30%;
+  width: 60%;
+  margin-left: 20%;
+  background-color: #f2f2f2;
 }
 
 #board{
-  background: #CCC;
+  background: #f2f2f2;
   border: #999 2px solid;
-  width: 800px;
-  height: 540px;
+  width: auto;
+  height: 450px;
   padding: 24px;
   margin: 0px auto;
   perspective: 600px;
@@ -71,21 +82,17 @@ img{
 	position: absolute;
 	width: 200px;
 	height: 200px;
-    backface-visibility: hidden;
+  backface-visibility: hidden;
 	border-radius: 25px;
 	border: 2px solid #888;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .face.back {
-    display: block;
-    transform: rotateY(180deg);
+  display: block;
+  transform: rotateY(180deg);
 	border-radius: 25px;
 	border: 2px solid #888;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-#counterScore{
-	
 }
 
 #score{
@@ -97,6 +104,5 @@ img{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   width: 40%;
   margin-left: 30%;
+  background-color: #f2f2f2;
 }
-	
-
