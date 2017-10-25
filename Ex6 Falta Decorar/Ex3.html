@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Memo Game</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<meta name="description" content="Exercise 3 User Interfaces">
+<meta name="keywords" content="HTML,CSS, JS">
+<meta name="author" content="Ismael Garrido Mansoa & Gabriel García López">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./STYLE/style.css">
+<link href='./IMAGES' rel='stylesheet'>
+<script src="Script1.js"></script>
+
+</head>
+
+<body>
+
+<div id="inputForm">
+  <form>
+    Select the number of images (3 - 10):
+    <input id="inputImages" name="inputImages" >
+
+    Select the time in seconds (10 - 120 seconds):
+    <input id="inputSeconds" name="inputSeconds">
+
+    <button id="start" onclick="countDown(); counterScore(); createBox(); hideButton()" type="button">Play</button>
+
+	<button id="restartButton" onclick="restart()" type="button">Restart</button>
+
+
+  </form>
+</div>
+
+<div id="timerBox">
+  <p id="timer"></p>
+</div>
+
+<div id="counterScore">
+  <p id="score"></p>
+</div>
+
+<div id="board">
+
+</div>
+
+</body>
+</html>
