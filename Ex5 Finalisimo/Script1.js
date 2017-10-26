@@ -2,21 +2,25 @@
 	Explanation is done in the first case and is the same for the rest of them considering 
 	all possible iterations between the videos. */
 function swap(videoIframe, imageDrag, title, description){
+	//List of all the iframe videos that can be swapped
 	var PRO = "https://www.youtube.com/embed/4B-wFx0aMlw";
 	var AUS = "https://www.youtube.com/embed/k_0UdJhl_rc";
 	var DUM = "https://www.youtube.com/embed/Nru316NF2h0";
 	var STU = "https://www.youtube.com/embed/E1iwrfgNOUU";
 	
+	//List of images representing the videos that will appear in the video gallery
 	var imagePRO = "./IMAGES/PRO.png"; /*Error path de la imamgen*/
 	var imageAUS = "./IMAGES/AUS.png";
 	var imageDUM = "./IMAGES/DUM.png";
 	var imageSTU = "./IMAGES/STU.png";	
 
+	//Title of the videos
 	var desPRO = "Pink Guy - The Prophecy";
 	var desAUS = "Pink Guy - Are You Serious (Axel Boy Remix)";
 	var desDUM = "Pink Guy - Dumplings (Borgore Remix)";
 	var desSTU = "Pink Guy - Fried Noodles (Getter Remix)";
 
+	//Different cases of the swapping
 	switch(videoIframe.src){
 		case PRO:
 			/*If video in iframe is PRO and image dragged is image1 then swap them*/
@@ -232,7 +236,7 @@ function slide(id){
 
 
 //Cookies
-
+//Function to load the cookie when we re-enter the webpage
 function getCookie(cname){
 	var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -248,6 +252,7 @@ function getCookie(cname){
     return "";
 }
 
+//Function to see if there is a cookie stored
 function checkCookie(){
 	var user = getCookie("email");
 	var pattern0 = /[A-z,0-9]/;
